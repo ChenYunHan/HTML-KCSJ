@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+    background-color: rgba(201, 166, 197, 0.075);
+}
+
+
+a:link {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:visited {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:active {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+}
+
+/*右箭头*/
+.right-arrow {
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+}
+
+.right-arrow::after {
+    display: inline-block;
+    content: " ";
+    height: 11px;
+    width: 11px;
+    border-width: 2px 2px 0 0;
+    border-color: #1a171733;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 40%;
+    left: 90%;
+}
+
+.new-right::after {
+    top: 23.5%;
+    left: 66%;
+}
+
+#avatar {
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.ii1 {
+    height: 9px;
+}
+
+.ii {
+    background-color: white;
+}
+
+#logandreg {
+    color: rgb(0, 145, 212);
+    border: 1px solid rgb(0, 145, 212);
+    border-radius: 25px;
+    width: 190px;
+    margin-bottom: 25px;
+}
+
+.nav-tabs {
+    text-align: center;
+    height: 27px;
+    line-height: 27px;
+}
+
+
+#i2 {
+    border-top: 0.3px solid rgba(0, 0, 0, 0.253);
+    border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);
+}
+
+#i2_1 {
+    border-right: 0.3px solid rgba(0, 0, 0, 0.253);
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#i2_2 {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#i2_3 {
+    border-left: 0.3px solid rgba(0, 0, 0, 0.253);
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.c1 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.i4_1 {
+    height: 55px;
+    padding-left: 38px;
+    margin: 0;
+    padding-top: 18px;
+}
+
+.i7_1 {
+    margin: 0;
+    padding-left: 40px;
+}
+
+.p1 {
+    margin: 0;
+    padding: 0;
+}
+
+.new {
+    font-size: 18px;
+    color: black;
+}

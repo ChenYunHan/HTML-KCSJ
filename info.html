@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style_info.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="d1" class="center-vertical">
+            <div class="f1 " style="width: 100%">
+                <a href="mine.html">
+                    <div class="left-arrow"></div>
+                </a>个人资料
+            </div>
+        </div>
+        <div id="d2" class="ii">
+            <img src="./img/u24.png" alt="头像" class="center-block" style="width:70px">
+            <img id="img1" src="./img/u66.png" alt="框">
+            <img id="img2" src="./img/u26.png" alt="相机上传">
+        </div>
+        <div class="row ii1">
+        </div>
+        <div class=" row ii">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="#5">
+                        <div class="media col-xs-12 i4_1 " style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);">
+                            <div class="media-left" style="padding-left: 13px;width: 87%;">
+                                <p>姓名</p>
+                            </div>
+                            <div class="media-right sp1" style="padding-left: 12px">
+                                <span>某某</span>
+                            </div>
+                            <div class="right-arrow"></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#6">
+                        <div class="media col-xs-12 i4_1 ">
+                            <div class="media-left" style="padding-left: 13px;width:67%;">
+                                <p>手机</p>
+                            </div>
+                            <div id="tel1" class="media-right sp1" style="padding-left: 13px">
+                            </div>
+                            <div class="right-arrow"></div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script>
+        var name = $.cookie('name')
+        $('#tel1').html('<span>' + name + '</span>')
+        $.cookie('name', null);
+    </script>
+</body>
+
+</html>

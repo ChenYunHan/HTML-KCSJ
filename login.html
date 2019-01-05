@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style_login.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="d1" class="center-vertical ">
+            <div class="f1 " style="width: 100%">
+                <a href="mine.html">
+                    <div class="left-arrow"></div>
+                </a>登录
+            </div>
+        </div>
+        <div class="ii1">
+        </div>
+        <form name="frm1" id="frm1" action="mine.html" method="POST" class="form-horizontal" role="form">
+            <div class="form-group login_3">
+                <label for="tel" class="col-lg-2 col-xs-2 control-label login_1">
+                    <img src="./img/u18.png" alt="登录电话" style="width: 30px">
+                </label>
+                <div class="col-lg-10 col-xs-10 login_2">
+                    <input type="text" name="name" id="name" class="form-control" value="" placeholder="手机号">
+                </div>
+            </div>
+
+            <div class="form-group login_3">
+                <label for="tel" class="col-lg-2 col-xs-2 control-label login_1">
+                    <img src="./img/u22.png" alt="登录密码" style="width: 28px">
+                </label>
+                <div class="col-lg-10 col-xs-10 login_2">
+                    <input type="password" name="paw" id="paw" class="form-control" value="" placeholder="密码">
+                </div>
+            </div>
+            <div id="d2" class="text-center" style="height: 340px">
+                <div>
+                    <button id="d2_b1" type="button" class="btn btn-default btn-lg f1">登录</button>
+                </div>
+                <div>
+                    <button id="d2_b2" type="button" class="btn btn-default btn-lg f1">没有账号，立即注册</button>
+                </div>
+                <div>
+                    <p id="p1" for="protocol">登录注册即同意<a href="#">《用户协议》</a></p>
+                </div>
+            </div>
+        </form>
+        <div id="result">
+        </div>
+
+    </div>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/js_login.js"></script>
+</body>
+
+</html>
