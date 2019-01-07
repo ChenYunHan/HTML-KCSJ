@@ -47,9 +47,8 @@ a:active {
 
 /*右箭头*/
 .right-arrow {
-    width: 25px;
-    height: 25px;
-    margin-right: 20px;
+    width: 0px;
+    height: 0px;
 }
 
 .right-arrow::after {
@@ -67,7 +66,7 @@ a:active {
 }
 
 .new-right::after {
-    top: 23.5%;
+    top: 22.5%;
     left: 66%;
 }
 

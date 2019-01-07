@@ -1,0 +1,106 @@
+/*右箭头*/
+.right-arrow {
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+}
+
+.right-arrow::after {
+    display: inline-block;
+    content: " ";
+    height: 11px;
+    width: 11px;
+    border-width: 2px 2px 0 0;
+    border-color: #1a171733;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 40%;
+    left: 90%;
+}
+
+/*左箭头*/
+.left-arrow {
+    padding: 0px;
+}
+
+.left-arrow::after {
+    display: inline-block;
+    content: " ";
+    height: 11px;
+    width: 11px;
+    border-width: 2px 2px 0 0;
+    border-color: white;
+    border-style: solid;
+    transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
+    position: absolute;
+    left: 5%;
+    top: 25px;
+}
+
+a:link {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:visited {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:active {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+    background-color: rgba(201, 166, 197, 0.075);
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+.center-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#d1 {
+    width: 100%;
+    height: 60px;
+    background-color: rgb(27, 131, 210)
+}
+
+.f1 {
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+
+.ii1 {
+    height: 9px;
+}
+
+.ii {
+    background-color: white;
+}
+
+.i4_1 {
+    height: 55px;
+    padding-left: 38px;
+    margin: 0;
+    padding-top: 18px;
+}
+
+#a1 {
+    font-size: 15px;
+}
