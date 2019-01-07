@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>看账导航</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style_account.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="d1" class="center-vertical" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);">
+            <ul class="all">
+                <li class="l1"><span id="ul1">武汉蓝海科技服务有限公司</span><span class="right-arrow"></span>
+                    <ul id="u1" style="z-index: 999;">
+                        <li class="l2"><span>二级菜单</span></li>
+                        <li class="l2"><span>二级菜单</span></li>
+                        <li class="l2"><span>二级菜单</span></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="row" style="z-index: -1">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="#7">
+                        <div class="media col-xs-12 i4_1 ii">
+                            <div class="media-left">
+                                <img src="./img/ico_03.png" class="media-object img1" alt="利润情况">
+                                利润情况
+                            </div>
+                            <div id="dd1" class="media-body">
+                                <p>8月利润 100000.00</p>
+                                <p>本年利润 200000.00</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <div class="col-xs-12" style="height: 9px"></div>
+                <li>
+                    <a href="./set.html">
+                        <div class="media col-xs-12 i4_1 ii">
+                            <div class="media-left">
+                                <img src="./img/ico_07.png" class="media-object img1" alt="纳税情况">
+                                纳税情况
+                            </div>
+                            <div id="dd2" class="media-body">
+                                <p>8月利润 100000.00</p>
+                                <p>本年利润 200000.00</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <div class="col-xs-12" style="height: 9px"></div>
+                <li>
+                    <a href="./set.html">
+                        <div class="media col-xs-12 i4_1 ii">
+                            <div class="media-left">
+                                <img src="./img/ico_63.png" class="media-object img1" alt="应收账款">
+                                应收账款
+                            </div>
+                            <div id="dd3" class="media-body">
+                                <p>8月利润 100000.00</p>
+                                <p>本年利润 200000.00</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <div class="col-xs-12" style="height: 9px"></div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main_nav_bottom">
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container-fluid" style="background-color: white">
+                <ul class="nav nav-tabs nav-tabs-justified">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="align-content: center">
+                            <li><a href="index.html">
+                                    <img src="./img/u40.png" alt="首页">
+                                    <p class="p1">首页</p>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <li><a href="#">
+                                    <img src="./img/u42.png" alt="看账">
+                                    <p class="p1">看账</p>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="align-content: center">
+                            <li><a href="./mine.html">
+                                    <img src="./img/u32.png" alt="我的">
+                                    <p class="p1">我的</p>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/js_account.js"></script>
+    <script>
+        $(function () {
+            $('.all>li').click(function () {
+                $(this).find('ul').slideToggle()
+            });
+        })
+    </script>
+</body>
+
+</html>

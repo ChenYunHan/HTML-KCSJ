@@ -58,6 +58,11 @@ a:active {
     text-decoration: none
 }
 
+.row {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
     background-color: rgba(201, 166, 197, 0.075);

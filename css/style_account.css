@@ -1,0 +1,149 @@
+/*下箭头*/
+.right-arrow {
+    width: 0px;
+    height: 0px;
+}
+
+.right-arrow::after {
+    display: inline-block;
+    content: " ";
+    height: 10px;
+    width: 10px;
+    border-width: 1.5px 1.5px 0 0;
+    border-color: #000000;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, 0.71, -0.71, 0, 0);
+    position: absolute;
+    top: 2.7%;
+    left: 77%;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+    background-color: rgba(201, 166, 197, 0.075);
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+}
+
+a:link {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:visited {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:active {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+#d1 {
+    width: 100%;
+    height: 56px;
+    background-color: white;
+    font-size: 18px;
+    color: black;
+}
+
+.center-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.b1 {
+    background-color: white;
+}
+
+
+.nav-tabs {
+    text-align: center;
+    height: 27px;
+    line-height: 27px;
+}
+
+.p1 {
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* 下拉菜单 */
+.all {
+    text-align: center;
+    padding-left: 0px;
+}
+
+.l1 {
+    margin-top: 10px;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.l2 {
+    width: 250px;
+    line-height: 30px;
+    float: left;
+    margin-left: 36px;
+    list-style: none;
+}
+
+.all ul {
+    position: absolute;
+    display: none;
+}
+
+.ii {
+    background-color: white;
+    padding-bottom: 15px;
+}
+
+.i4_1 {
+    padding-left: 30px;
+    padding-right: 0px;
+    margin: 0;
+    padding-top: 15px;
+    background-color: white;
+}
+
+.img1 {
+    height: 50%;
+    margin-bottom: 2px;
+}
+
+.media-left {
+    padding-right: 44px;
+    border-right: 0.5px solid rgba(0, 0, 0, 0.253);
+    color: black;
+}
+
+.media-body {
+    padding-top: 20px;
+}
