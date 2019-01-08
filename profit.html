@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>利润情况</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style_profit.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="d1" class="center-vertical" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);">
+            <p>利润情况</p>
+        </div>
+        <div id="d2">
+            <div class="left-arrow"></div>
+            <p style="padding-top: 10px;">2018年</p>
+            <div class="right-arrow"></div>
+        </div>
+        <div id="box" style="width:100%;height:300px;">
+
+
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/echarts.js"></script>
+    <script>
+        var myChart = echarts.init(document.getElementById("box"));
+        var option = {
+            backgroundColor: '#FBFBFB',
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['充值']
+            },
+            calculable: true,
+            xAxis: [{
+                axisLabel: {
+                    rotate: 20,
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#CECECE'
+                    }
+                },
+                type: 'category',
+                boundaryGap: false,
+                data: function () {
+                    var list = [];
+                    for (var i = 10; i <= 18; i++) {
+                        if (i <= 12) {
+                            list.push('2016年' + i + '月');
+                        } else {
+                            list.push('2017年' + (i - 12) + '月');
+                        }
+                    }
+                    return list;
+                }()
+            }],
+            yAxis: [{
+                type: 'value',
+                show: false,
+                splitLine: {
+                    onZero: false,
+                },
+                axisLabel: {
+
+                },
+            }],
+            series: [{
+                name: '利润',
+                type: 'line',
+                smooth: 0.2,
+                color: ['#66AEDE'],
+                data: [800, 300, 500, 800, 300, -600, 500, 600]
+            }, ]
+        };
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>

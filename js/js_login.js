@@ -13,8 +13,5 @@ $("#d2_b1").click(function () {
                 window.location.href = "./mine.html";
             }
         },
-        error: function (er) {
-            BackErr(er);
-        }
     });
 });

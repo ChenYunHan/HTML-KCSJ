@@ -23,7 +23,4 @@ $.ajax({
             }
         }
     },
-    error: function (er) {
-        BackErr(er);
-    }
 });

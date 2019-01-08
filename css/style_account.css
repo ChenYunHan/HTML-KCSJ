@@ -15,7 +15,8 @@
     transform: matrix(0.71, 0.71, 0.71, -0.71, 0, 0);
     position: absolute;
     top: 2.7%;
-    left: 77%;
+    left: 78%;
+    z-index: 3;
 }
 
 body {
@@ -94,32 +95,6 @@ a:active {
     color: rgba(0, 0, 0, 0.5);
 }
 
-/* 下拉菜单 */
-.all {
-    text-align: center;
-    padding-left: 0px;
-}
-
-.l1 {
-    margin-top: 10px;
-    line-height: 30px;
-    text-align: center;
-    margin-right: 10px;
-}
-
-.l2 {
-    width: 250px;
-    line-height: 30px;
-    float: left;
-    margin-left: 36px;
-    list-style: none;
-}
-
-.all ul {
-    position: absolute;
-    display: none;
-}
-
 .ii {
     background-color: white;
     padding-bottom: 15px;
@@ -146,4 +121,34 @@ a:active {
 
 .media-body {
     padding-top: 20px;
+}
+
+.sp1 {
+    margin-right: 20px;
+}
+
+.all {
+    /* //用div的样式代替select的样式 */
+    width: 275px;
+    height: 40px;
+    border-radius: 5px;
+    /* //盒子阴影修饰作用,自己随意 */
+    box-shadow: 0 0 5px #ccc;
+    position: relative;
+}
+
+select {
+    /* //清除select的边框样式 */
+    border: none;
+    /* //清除select聚焦时候的边框颜色 */
+    outline: none;
+    /* //将select的宽高等于div的宽高 */
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    /* //隐藏select的下拉图标 */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-left: 2%;
 }
