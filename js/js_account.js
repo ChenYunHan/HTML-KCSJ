@@ -8,6 +8,9 @@ $.ajax({
         if (data.errorCode == "1200") {
             var bh = data.result[0].DWZD_BH;
             var mc = data.result[0].DWZD_MC;
+            $.cookie("cno", bh, {
+                expires: 1,
+            });
             aj1(bh);
             la.html("");
             la.append('<option id="' + bh + '">' + mc + '</option>')
@@ -65,5 +68,9 @@ function aj1(data) {
 $("#u1").change(function (e) {
     e.preventDefault();
     var id = $("#u1 option:selected").attr("id");
+    $.cookie("cno", id, {
+        expires: 1,
+    });
     aj1(id);
+
 });

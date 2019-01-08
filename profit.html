@@ -13,75 +13,91 @@
 <body>
     <div class="container-fluid">
         <div id="d1" class="center-vertical" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);">
+            <a href="./account.html">
+                <div class="left-arrow return"></div>
+            </a>
             <p>利润情况</p>
         </div>
         <div id="d2">
-            <div class="left-arrow"></div>
-            <p style="padding-top: 10px;">2018年</p>
-            <div class="right-arrow"></div>
+            <div id="leA" class="left-arrow"></div>
+            <p id="year" style="padding-top: 10px;">2018年</p>
+            <div id="riA" class="right-arrow"></div>
         </div>
-        <div id="box" style="width:100%;height:300px;">
-
-
+        <!-- <div id="box" style="width:100%;height:300px;"> -->
+        <div id="row ">
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="active col-xs-4 li1">
+                    <a id="li1" href="#income" data-toggle="tab">
+                        <p><span>￥</span><span id="sp1">168726.09</span></p>
+                        <p>总收入</p>
+                    </a>
+                </li>
+                <li class=" col-xs-4 li1">
+                    <a id="li2" href="#cost" data-toggle="tab">
+                        <p><span>￥</span><span id="sp2">136119.93</span></p>
+                        <p>总支出</p>
+                    </a>
+                </li>
+                <li class=" col-xs-4 li1">
+                    <a id="li3" href="#profit" data-toggle="tab">
+                        <p><span>￥</span><span id="sp3">32606.16</span></p>
+                        <p>总利润</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="income">
+                <div id="box" style="width: 414px;height:500px">
+                </div>
+            </div>
+            <div class="tab-pane fade" id="cost">
+            </div>
+            <div class="tab-pane fade" id="profit">
+            </div>
         </div>
     </div>
 
     <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/echarts.js"></script>
+    <script src="./js/js_profit.js"></script>
     <script>
-        var myChart = echarts.init(document.getElementById("box"));
-        var option = {
-            backgroundColor: '#FBFBFB',
-            tooltip: {
-                trigger: 'axis'
-            },
-            legend: {
-                data: ['充值']
-            },
-            calculable: true,
-            xAxis: [{
-                axisLabel: {
-                    rotate: 20,
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: '#CECECE'
-                    }
-                },
-                type: 'category',
-                boundaryGap: false,
-                data: function () {
-                    var list = [];
-                    for (var i = 10; i <= 18; i++) {
-                        if (i <= 12) {
-                            list.push('2016年' + i + '月');
-                        } else {
-                            list.push('2017年' + (i - 12) + '月');
-                        }
-                    }
-                    return list;
-                }()
-            }],
-            yAxis: [{
-                type: 'value',
-                show: false,
-                splitLine: {
-                    onZero: false,
-                },
-                axisLabel: {
+        displayData();
+        drawing("li1");
+        var year = $("#year").text();
+        year = year.substr(0, year.length - 1);
+        year = parseInt(year);
+        $("#riA").click(function () {
+            year++;
+            $("#year").html(year + "年");
+            displayData();
+        })
+        $("#leA").click(function (e) {
+            e.preventDefault();
+            year--;
+            $("#year").html(year + "年");
+            displayData();
+        });
 
-                },
-            }],
-            series: [{
-                name: '利润',
-                type: 'line',
-                smooth: 0.2,
-                color: ['#66AEDE'],
-                data: [800, 300, 500, 800, 300, -600, 500, 600]
-            }, ]
-        };
-        myChart.setOption(option);
+        $(function () {
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                // 获取已激活的标签页的id
+                var id = $(e.target).attr("id");
+                $("#income").html("");
+                $("#cost").html("");
+                $("#profit").html("");
+                if (id == "li1") {
+                    $("#income").html('<div id="box" style="width: 414px;height:500px"></div>')
+                } else if (id == "li2") {
+                    $("#cost").html('<div id="box" style="width: 414px;height:500px"></div>')
+                } else if (id == "li3") {
+                    $("#profit").html('<div id="box" style="width: 414px;height:500px"></div>')
+                }
+                drawing(id);
+            });
+        });
     </script>
 </body>
 

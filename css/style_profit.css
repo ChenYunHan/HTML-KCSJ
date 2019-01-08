@@ -30,12 +30,20 @@
     height: 8px;
     width: 8px;
     border-width: 1px 1px 0 0;
-    border-color: black;
+    border-color: #271e1e;
     border-style: solid;
     transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
     position: absolute;
     top: 9.8%;
     left: 40%;
+}
+
+.return::after {
+    height: 11px;
+    width: 11px;
+    border-width: 2px 2px 0 0;
+    left: 5%;
+    top: 20px;
 }
 
 .row {
@@ -46,6 +54,26 @@
 .container-fluid {
     padding: 0;
     margin: 0;
+}
+
+a:link {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:visited {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:active {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
 }
 
 body {
@@ -80,4 +108,10 @@ body {
 
 p {
     margin-bottom: 0px;
+}
+
+.li1 {
+    border: none;
+    text-align: center;
+    padding: 0px;
 }
