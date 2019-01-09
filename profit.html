@@ -23,38 +23,43 @@
             <p id="year" style="padding-top: 10px;">2018年</p>
             <div id="riA" class="right-arrow"></div>
         </div>
-        <!-- <div id="box" style="width:100%;height:300px;"> -->
         <div id="row ">
             <ul id="myTab" class="nav nav-tabs">
                 <li class="active col-xs-4 li1">
                     <a id="li1" href="#income" data-toggle="tab">
-                        <p><span>￥</span><span id="sp1">168726.09</span></p>
+                        <p><span>￥</span><span id="sp1">0</span></p>
                         <p>总收入</p>
                     </a>
                 </li>
                 <li class=" col-xs-4 li1">
                     <a id="li2" href="#cost" data-toggle="tab">
-                        <p><span>￥</span><span id="sp2">136119.93</span></p>
+                        <p><span>￥</span><span id="sp2">0</span></p>
                         <p>总支出</p>
                     </a>
                 </li>
                 <li class=" col-xs-4 li1">
                     <a id="li3" href="#profit" data-toggle="tab">
-                        <p><span>￥</span><span id="sp3">32606.16</span></p>
+                        <p><span>￥</span><span id="sp3">0</span></p>
                         <p>总利润</p>
                     </a>
                 </li>
             </ul>
         </div>
         <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade in active" id="income">
-                <div id="box" style="width: 414px;height:500px">
+            <div class="tab-pane fade active in" id="income">
+                <div id="box" style="width: 100%;height:400px">
                 </div>
             </div>
             <div class="tab-pane fade" id="cost">
             </div>
             <div class="tab-pane fade" id="profit">
             </div>
+        </div>
+        <div class="row ii1">
+        </div>
+        <div class="row ii">
+            <ul id="u1" class="list-unstyled">
+            </ul>
         </div>
     </div>
 
@@ -65,6 +70,7 @@
     <script src="./js/js_profit.js"></script>
     <script>
         displayData();
+        displayList();
         drawing("li1");
         var year = $("#year").text();
         year = year.substr(0, year.length - 1);
@@ -73,31 +79,18 @@
             year++;
             $("#year").html(year + "年");
             displayData();
-        })
+            displayList();
+            switch1();
+        });
         $("#leA").click(function (e) {
             e.preventDefault();
             year--;
             $("#year").html(year + "年");
             displayData();
+            displayList();
+            switch1();
         });
-
-        $(function () {
-            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-                // 获取已激活的标签页的id
-                var id = $(e.target).attr("id");
-                $("#income").html("");
-                $("#cost").html("");
-                $("#profit").html("");
-                if (id == "li1") {
-                    $("#income").html('<div id="box" style="width: 414px;height:500px"></div>')
-                } else if (id == "li2") {
-                    $("#cost").html('<div id="box" style="width: 414px;height:500px"></div>')
-                } else if (id == "li3") {
-                    $("#profit").html('<div id="box" style="width: 414px;height:500px"></div>')
-                }
-                drawing(id);
-            });
-        });
+        switch1();
     </script>
 </body>
 
