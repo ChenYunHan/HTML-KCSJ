@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+    background-color: rgba(201, 166, 197, 0.075);
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.center-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ii {
+    background-color: white;
+}
+
+.ii1 {
+    height: 9px;
+}
+
+
+a:link {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:visited {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}
+
+a:active {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none
+}

@@ -1,11 +1,5 @@
-.row {
-    margin: 0;
-    padding: 0;
-}
-
-.container-fluid {
-    padding: 0;
-    margin: 0;
+body {
+    background-color: white;
 }
 
 a:link {
@@ -47,25 +41,9 @@ a:active {
     top: 25px;
 }
 
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
-    outline: none;
-    -webkit-appearance: none;
-}
-
 .ii1 {
     height: 9px;
     background-color: rgba(201, 166, 197, 0.075);
-}
-
-.center-vertical {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 input,

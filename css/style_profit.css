@@ -1,5 +1,3 @@
-@charset "utf-8";
-
 /*右箭头*/
 .right-arrow {
     margin-right: 20px;
@@ -46,24 +44,6 @@
     top: 20px;
 }
 
-.row {
-    margin: 0;
-    padding: 0;
-}
-
-.ii1 {
-    height: 9px;
-}
-
-.ii {
-    background-color: white;
-}
-
-.container-fluid {
-    padding: 0;
-    margin: 0;
-}
-
 .i4_1 {
     padding: 0px;
     height: 55px;
@@ -75,32 +55,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-
-a:link {
-    color: rgba(0, 0, 0, 0.5);
-    text-decoration: none
-}
-
-a:visited {
-    color: rgba(0, 0, 0, 0.5);
-    text-decoration: none
-}
-
-a:hover {
-    color: rgba(0, 0, 0, 0.5);
-    text-decoration: none
-}
-
-a:active {
-    color: rgba(0, 0, 0, 0.5);
-    text-decoration: none
-}
-
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
-    background-color: rgba(201, 166, 197, 0.075);
 }
 
 #d1 {
@@ -120,12 +74,6 @@ body {
     color: black;
     text-align: center;
 
-}
-
-.center-vertical {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 p {

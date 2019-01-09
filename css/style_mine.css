@@ -1,50 +1,3 @@
-@charset "utf-8";
-
-.row {
-    margin: 0;
-    padding: 0;
-}
-
-.container-fluid {
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
-    background-color: rgba(201, 166, 197, 0.075);
-}
-
-
-a:link {
-    color: rgba(0, 0, 0, 0.5);
-    text-decoration: none
-}
-
-a:visited {
-    color: rgba(0, 0, 0, 0.5);
-    text-decoration: none
-}
-
-a:hover {
-    color: rgba(0, 0, 0, 0.5);
-    text-decoration: none
-}
-
-a:active {
-    color: rgba(0, 0, 0, 0.5);
-    text-decoration: none
-}
-
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
-    outline: none;
-}
-
 /*右箭头*/
 .right-arrow {
     width: 0px;
@@ -75,14 +28,6 @@ a:active {
     margin-bottom: 25px;
 }
 
-.ii1 {
-    height: 9px;
-}
-
-.ii {
-    background-color: white;
-}
-
 #logandreg {
     color: rgb(0, 145, 212);
     border: 1px solid rgb(0, 145, 212);
@@ -96,7 +41,6 @@ a:active {
     height: 27px;
     line-height: 27px;
 }
-
 
 #i2 {
     border-top: 0.3px solid rgba(0, 0, 0, 0.253);
@@ -126,7 +70,6 @@ a:active {
     justify-content: center;
 }
 
-
 .c1 {
     margin-top: 5px;
     margin-bottom: 0px;
@@ -152,4 +95,8 @@ a:active {
 .new {
     font-size: 18px;
     color: black;
+}
+
+.media-body {
+    text-align: left;
 }

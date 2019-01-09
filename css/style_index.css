@@ -1,19 +1,4 @@
-@charset "utf-8";
-
-.row {
-    margin: 0;
-    padding: 0;
-}
-
-.container-fluid {
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    background-color: rgba(201, 166, 197, 0.075);
-}
-
+/* 右箭头 */
 .right-arrow {
     width: 25px;
     height: 25px;
@@ -63,14 +48,6 @@ a:active {
     text-decoration: none
 }
 
-.ii {
-    background-color: white;
-}
-
-.ii1 {
-    height: 9px;
-}
-
 .i4_1 {
     height: 55px;
     padding-left: 38px;
@@ -86,6 +63,7 @@ a:active {
 }
 
 .f1 {
+    text-align: left;
     font-size: 14.5px;
     width: 80%;
     color: rgb(56, 56, 56)

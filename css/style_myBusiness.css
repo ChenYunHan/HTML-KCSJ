@@ -17,22 +17,6 @@
     top: 25px;
 }
 
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
-    background-color: rgba(201, 166, 197, 0.075);
-}
-
-.container-fluid {
-    padding: 0;
-    margin: 0;
-}
-
-.center-vertical {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 #d1 {
     width: 100%;
     height: 60px;
@@ -43,14 +27,6 @@ body {
     text-align: center;
     font-size: 18px;
     color: white;
-}
-
-.ii1 {
-    height: 9px;
-}
-
-.ii {
-    background-color: white;
 }
 
 .i4_1 {
