@@ -106,6 +106,7 @@ function drawing(ty) {
         success: function (data) {
             if (data.errorCode == "1200") {
                 var myChart = echarts.init(document.getElementById("box"));
+                myChart.hideLoading();
                 var option = {
                     backgroundColor: 'white',
                     tooltip: {
