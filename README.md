@@ -34,7 +34,7 @@
 
 ##### 下午
 
-- 继续完成profit.html（利润情况）页面，并且能够使用echarts框架画出基本图形。
+- 继续完成profit.html（利润情况）页面，并且能够使用echarts框架画出基本的折线图。
 - 优化account.html（看账导航）页面。
 
 ------
@@ -47,4 +47,8 @@
 - 开始payment.html（纳税情况）页面的初步设计。
 - 优化account.html（看账导航）页面。
 
-测试
+##### 下午
+
+- 继续完成payment.html(纳税情况)页面，并且能够用echarts框架画出基本的饼图。
+- 优化profit.html（看账导航）页面。
+
