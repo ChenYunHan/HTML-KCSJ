@@ -52,3 +52,6 @@
 - 继续完成payment.html(纳税情况)页面，并且能够用echarts框架画出基本的饼图。
 - 优化profit.html（看账导航）页面。
 
+##### 晚上
+- 新增style.css文件，优化所有的css文件和html文件。
+
