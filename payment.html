@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>纳税情况</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style_payment.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="d1" class="center-vertical" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);">
+            <a href="./account.html">
+                <div class="left-arrow return"></div>
+            </a>
+            <span>利润情况</span>
+            <img id="img1" src="./img/u103.png" alt="季度">
+            <img id="img2" src="./img/u104.png" alt="月份">
+        </div>
+        <div id="d2">
+            <div id="leA" class="left-arrow"></div>
+            <p id="year" style="padding-top: 10px;">2018年</p>
+            <div id="riA" class="right-arrow"></div>
+        </div>
+        <div id="box" style="width: 100%;height:400px">
+
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/echarts.js"></script>
+    <script src="./js/js_payment.js"></script>
+    <script>
+        drawing();
+        $("#img1").click(function () {
+            $("#img1").fadeOut();
+            $("#img2").fadeIn();
+        })
+        $("#img2").click(function () {
+            $("#img1").fadeIn();
+            $("#img2").fadeOut();
+        })
+    </script>
+</body>
+
+</html>
