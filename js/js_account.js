@@ -54,6 +54,7 @@ function aj1(data) {
                 $("#dd2").append('<p><span class="sp1">本年纳税</span>' + pf.yearlyTax + '</p>')
                 //账款
                 pf = rs.receivable;
+                $.cookie("year", pf.period);
                 month = pf.period.substr(4, 5);
                 if (month.substr(0, 1) === "0") {
                     month = month.substr(1);

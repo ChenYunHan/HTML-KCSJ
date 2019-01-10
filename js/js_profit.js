@@ -112,7 +112,6 @@ function drawing(ty) {
         dataType: "json",
         success: function (data) {
             if (data.errorCode == "1200") {
-
                 var option = {
                     backgroundColor: 'white',
                     tooltip: {

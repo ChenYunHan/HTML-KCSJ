@@ -1,0 +1,73 @@
+/*左箭头*/
+.left-arrow {
+    margin-right: 20px;
+}
+
+.left-arrow::after {
+    display: inline-block;
+    content: " ";
+    height: 11px;
+    width: 11px;
+    border-width: 2px 2px 0 0;
+    border-color: white;
+    border-style: solid;
+    transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 20px;
+    left: 5%;
+}
+
+#d1 {
+    width: 100%;
+    height: 56px;
+    background-color: rgb(27, 131, 210);
+    font-size: 18px;
+    color: black;
+    text-align: center;
+}
+
+#sp1 {
+    margin-bottom: 0px;
+    color: white
+}
+
+#d2_1 {
+    text-align: right;
+    padding-top: 5px;
+    padding-right: 8px;
+    color: rgb(102, 102, 102);
+    font-size: 13px;
+}
+
+#p1 {
+    color: rgb(102, 102, 102);
+}
+
+#p2 {
+    font-size: 45px;
+    color: rgb(27, 130, 210);
+}
+
+#sp2 {
+    color: rgb(27, 130, 210)
+}
+
+.i4_1 {
+    padding: 0px;
+    height: 55px;
+    margin: 0;
+    border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);
+}
+
+.pp1 {
+    padding-top: 15px;
+}
+
+#u1 {
+    text-align: left;
+    color: rgb(102, 102, 102)
+}
+
+.col-xs-3 {
+    text-align: center;
+}

@@ -94,7 +94,7 @@ function drawing() {
         url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/yearlyTaxOverview",
         data: {
             "Param": {
-                "company_no": "0000FX",
+                "company_no": id,
                 "date": year
             }
         },
@@ -186,6 +186,7 @@ function drawing() {
 function showList() {
     var fr = $("#u1");
     var fr1 = $("#u2");
+    id = $.cookie("cno");
     year = $("#year").text();
     year = year.substr(0, year.length - 1);
     $.ajax({
@@ -193,7 +194,7 @@ function showList() {
         url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/quarterlyTaxDetail",
         data: {
             "Param": {
-                "company_no": "0000FX",
+                "company_no": id,
                 "date": year
             }
         },
@@ -222,7 +223,7 @@ function showList() {
         url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/monthlyTaxDetail",
         data: {
             "Param": {
-                "company_no": "0000FX",
+                "company_no": id,
                 "date": year
             }
         },
