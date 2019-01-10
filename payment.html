@@ -19,16 +19,55 @@
                 <div class="left-arrow return"></div>
             </a>
             <span>利润情况</span>
-            <img id="img1" src="./img/u103.png" alt="季度">
-            <img id="img2" src="./img/u104.png" alt="月份">
+            <img id="img1" src="./img/u104.png" alt="月份" style="display:none">
+            <img id="img2" src="./img/u103.png" alt="季度">
         </div>
         <div id="d2">
             <div id="leA" class="left-arrow"></div>
-            <p id="year" style="padding-top: 10px;">2018年</p>
+            <p id="year" style="padding-top: 10px;">2017年</p>
             <div id="riA" class="right-arrow"></div>
         </div>
-        <div id="box" style="width: 100%;height:550px">
-
+        <div id="box" class="ii1" style="width: 100%;height:500px;">
+        </div>
+        <div class="ii1"></div>
+        <div class="row ii">
+            <ul id="u1" class="list-unstyled">
+            </ul>
+            <ul id="u2" class="list-unstyled" style="display:none">
+                <li>
+                    <div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);">
+                        <div class="col-xs-5">
+                            <p class="p1" style="padding-left: 0px;">11</p>
+                            <p class="p3">月份</p>
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="p2">纳税总额</p>
+                            <p class="p2">192.44</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p class="p2">综合纳税率</p>
+                            <p class="p2">9.03%</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="col-xs-12 i4_1">
+                        <div class="col-xs-3 c1 ">
+                            <p>其中：增值税</p>
+                            <p>所得税</p>
+                        </div>
+                        <div class="col-xs-5 c2">
+                            <p class="p2">170.67</p>
+                            <p class="p2">11.95</p>
+                        </div>
+                        <div class="col-xs-4 c3">
+                            <p class="p2">20.3%</p>
+                            <p class="p2">4.98%</p>
+                        </div>
+                    </div>
+                </li>
+                <div class="col-xs-12 ii2"></div>
+            </ul>
         </div>
     </div>
 
@@ -39,14 +78,34 @@
     <script src="./js/js_payment.js"></script>
     <script>
         drawing();
+        showList();
+        var year = $("#year").text();
+        year = year.substr(0, year.length - 1);
+        year = parseInt(year);
         $("#img1").click(function () {
             $("#img1").fadeOut();
             $("#img2").fadeIn();
+            $("#u1").fadeIn();
+            $("#u2").fadeOut();
         })
         $("#img2").click(function () {
             $("#img1").fadeIn();
             $("#img2").fadeOut();
+            $("#u1").fadeOut();
+            $("#u2").fadeIn();
         })
+        $("#riA").click(function () {
+            year++;
+            $("#year").html(year + "年");
+            drawing();
+            showList();
+        });
+        $("#leA").click(function () {
+            year--;
+            $("#year").html(year + "年");
+            drawing();
+            showList();
+        });
     </script>
 </body>
 

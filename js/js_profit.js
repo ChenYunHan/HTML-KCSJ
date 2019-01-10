@@ -1,3 +1,5 @@
+var myChart;
+
 function displayData() {
     var id = $.cookie("cno");
     var year = $("#year").text();
@@ -78,6 +80,11 @@ function switch1() {
 }
 
 function drawing(ty) {
+    if (myChart != null && myChart != "" && myChart != undefined) {
+        myChart.dispose();
+    }
+    myChart = echarts.init(document.getElementById("box"));
+    myChart.showLoading();
     id = $.cookie("cno");
     year = $("#year").text();
     year = year.substr(0, year.length - 1);
@@ -105,8 +112,6 @@ function drawing(ty) {
         dataType: "json",
         success: function (data) {
             if (data.errorCode == "1200") {
-                var myChart = echarts.init(document.getElementById("box"));
-                myChart.hideLoading();
                 var option = {
                     backgroundColor: 'white',
                     tooltip: {
@@ -176,6 +181,7 @@ function drawing(ty) {
                         }
                     }
                 };
+                myChart.hideLoading();
                 myChart.setOption(option);
             }
         }

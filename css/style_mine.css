@@ -99,4 +99,6 @@
 
 .media-body {
     text-align: left;
+    padding-left: 13px;
+    width: 80%;
 }

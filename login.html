@@ -38,7 +38,7 @@
                     <img src="./img/u22.png" alt="登录密码" style="width: 28px">
                 </label>
                 <div class="col-lg-10 col-xs-10 login_2">
-                    <input type="password" name="paw" id="paw" class="form-control" value="" placeholder="密码">
+                    <input type="password" name="pwd" id="pwd" class="form-control" value="" placeholder="密码">
                 </div>
             </div>
             <div id="d2" class="text-center" style="height: 340px">
@@ -53,9 +53,9 @@
                 </div>
             </div>
         </form>
-        <div id="result">
-        </div>
-
+        <div id="dd1" class="alert alert-danger center-block" style="width: 80%;display: none">电话号码格式有误！</div>
+        <div id="dd2" class="alert alert-danger center-block" style="width: 80%;display: none">密码格式有误！必须在6~16位之间。</div>
+        <div id="dd3" class="alert alert-danger center-block" style="width: 80%;display: none">登陆失败</div>
     </div>
     <script src="./js/jquery-3.3.1.js"></script>
     <script src="./js/jquery.cookie.js"></script>
