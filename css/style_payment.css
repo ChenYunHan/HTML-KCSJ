@@ -75,3 +75,50 @@ img {
     left: 82%;
     border-radius: 14px;
 }
+
+.ii2 {
+    background-color: rgba(201, 166, 197, 0.075);
+    height: 9px;
+}
+
+.col-xs-5 {
+    text-align: left;
+}
+
+.col-xs-3 {
+    padding-top: 10px;
+    text-align: left;
+}
+
+.col-xs-4 {
+    padding-top: 10px;
+
+}
+
+.c1 {
+    font-size: 12px;
+    text-align: right;
+    color: rgba(185, 185, 185, 0.9);
+    padding-left: 0px;
+}
+
+.c2 {
+    font-size: 13px;
+    padding-top: 9px;
+    color: rgba(185, 185, 185, 0.9);
+}
+
+.c3 {
+    font-size: 13px;
+    color: rgba(185, 185, 185, 0.9);
+}
+
+.p1 {
+    font-size: 30px;
+    margin: 0px;
+    padding-left: 7px;
+}
+
+.p2 {
+    text-align: right;
+}
