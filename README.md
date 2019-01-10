@@ -50,8 +50,22 @@
 ##### 下午
 
 - 继续完成payment.html(纳税情况)页面，并且能够用echarts框架画出基本的饼图。
-- 优化profit.html（看账导航）页面。
+- 优化profit.html（利润情况）页面。
 
 ##### 晚上
 - 新增style.css文件，优化所有的css文件和html文件。
+
+#### 1.9号
+
+##### 上午
+
+- 继续完成payment.html（纳税情况）页面，已经能够实现全部的基本功能。
+- 优化profit.html（利润情况），mine.html（我的）页面。
+
+##### 下午
+
+- 完成payment.html（纳税情况）页面，能够正常显示所有数据并且能够与后端进行连接画出所想要的图形。
+- 完成receivable.html（应收账款）页面，能够正常显示所有的后端数据。
+- 初步完成login.html（登录）页面的js判断功能。
+- 优化account.html（看账导航）页面。
 
