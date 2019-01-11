@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_account.css">
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script>
+        if ($.cookie("name") == null) {
+            window.location.href = "./login.html?error=1";
+        }
+    </script>
 
 </head>
 
@@ -16,9 +23,9 @@
     <div class="container-fluid">
         <div id="d1" class="center-vertical" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);">
             <div>
-                <div class="right-arrow"></div>
                 <select id="u1" class="all center-block" style="z-index: 2">
                 </select>
+                <div class="right-arrow"></div>
             </div>
         </div>
         <div class="row" style="z-index: -1">
@@ -98,8 +105,7 @@
         </nav>
     </div>
 
-    <script src="./js/jquery-3.3.1.js"></script>
-    <script src="./js/jquery.cookie.js"></script>
+
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/js_account.js"></script>
     <script>

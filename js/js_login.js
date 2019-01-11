@@ -8,6 +8,7 @@ $("#name").blur(function () {
         $("#name").css("background-color", "rgb(243,221,221)");
         boolean1 = false;
     } else {
+        $("#frm1_1").css("border", "1px,solid,rgb(243,221,221)");
         boolean1 = true;
     }
 })
@@ -51,3 +52,10 @@ $("#d2_b1").click(function () {
         $("#dd3").delay(1000).fadeOut();
     }
 });
+
+function GetQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg); //search,查询？后面的参数，并匹配正则
+    if (r != null) return unescape(r[2]);
+    return null;
+}

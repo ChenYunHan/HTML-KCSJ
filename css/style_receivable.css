@@ -65,7 +65,9 @@
 
 #u1 {
     text-align: left;
-    color: rgb(102, 102, 102)
+    color: rgb(102, 102, 102);
+    width: 100%;
+    margin: 0px;
 }
 
 .col-xs-3 {

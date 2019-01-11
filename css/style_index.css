@@ -62,13 +62,6 @@ a:active {
     padding-top: 18px;
 }
 
-.f1 {
-    text-align: left;
-    font-size: 14.5px;
-    width: 80%;
-    color: rgb(56, 56, 56)
-}
-
 .p1 {
     margin: 0;
     padding: 0;
@@ -79,4 +72,15 @@ a:active {
     text-align: center;
     height: 27px;
     line-height: 27px;
+}
+
+.f1 {
+    text-align: left;
+    font-size: 14.5px;
+    color: rgb(56, 56, 56);
+    padding-left: 0px;
+}
+
+.col-xs-7 {
+    text-align: right;
 }

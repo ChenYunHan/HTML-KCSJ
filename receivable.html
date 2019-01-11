@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_receivable.css">
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script>
+        if ($.cookie("name") == null) {
+            window.location.href = "./login.html?error=1";
+        }
+    </script>
 
 </head>
 <div class="container-fluid">
@@ -30,8 +37,6 @@
         <ul id="u1" class="list-unstyled">
         </ul>
     </div>
-    <script src="./js/jquery-3.3.1.js"></script>
-    <script src="./js/jquery.cookie.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/js_receivable.js"></script>
     <script>

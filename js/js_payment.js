@@ -119,10 +119,6 @@ function drawing() {
                     "stamptax": "印花税",
                     "othertax": "其他税"
                 }
-                var len = 0;
-                for (let item in res) {
-                    len++;
-                }
                 for (let s in res) {
                     if (jj.hasOwnProperty(s)) {
                         var name = jj[s];
@@ -207,12 +203,43 @@ function showList() {
                     var month = res[i].date_quarter.substr(5);
                     var to = res[i].totaltax;
                     var to_r = res[i].totaltax_rate;
-                    var tht = res[i].thevattax;
-                    var tht_r = res[i].thevattax_rate;
-                    var inc = res[i].incometax;
-                    var inc_r = res[i].incometax_rate;
-                    var str = '<li><div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);"><div class="col-xs-5"><p class="p1">' + month + '</p><p class="p3">季度</p></div><div class="col-xs-3"><p class="p2">纳税总额</p><p class="p2">' + to + '</p></div><div class="col-xs-4"><p class="p2">综合纳税率</p><p class="p2">' + to_r + '</p></div></div></li><li><div class="col-xs-12 i4_1"><div class="col-xs-3 c1 "> <p>其中：增值税</p><p>所得税</p></div><div class="col-xs-5 c2"><p class="p2">' + inc + '</p><p class="p2">' + tht + '</p></div><div class="col-xs-4 c3"><p class="p2">' + inc_r + '</p><p class="p2">' + tht_r + '</p></div></div></li><div class="col-xs-12 ii2"></div>'
+                    var da = []; //存放有多少税
+                    var jj = {
+                        "thevattax": "增值税",
+                        "incometax": "所得税",
+                        "educationtax": "教育附加税",
+                        "educationaddtax": "地方教育附加税",
+                        "resourcetax": "资源税",
+                        "landaddtax": "土地增值税",
+                        "citytax": "城市维护建设税",
+                        "hometax": "房产税",
+                        "uselandtax": "土地使用税",
+                        "carusetax": "车船使用税",
+                        "stamptax": "印花税",
+                        "othertax": "其他税"
+                    }
+                    for (let s in res[i]) {
+                        if (jj.hasOwnProperty(s)) {
+                            var name = jj[s];
+                            var name_r = s + "_rate";
+                            var value = res[i][s];
+                            var value1 = res[i][name_r];
+                            var json = {
+                                "name": name,
+                                "value": value,
+                                "value1": value1
+                            };
+                            if (value != 0)
+                                da.push(json);
+                        }
+                    }
+                    var str = '<li><div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);"><div class="col-xs-4"><p class="p1">' + month + '</p><p class="p3">季度</p></div><div class="col-xs-4"><p class="p2">纳税总额</p><p class="p2">' + to + '</p></div><div class="col-xs-4"><p class="p2">综合纳税率</p><p class="p2">' + to_r + '</p></div></div></li><li><div class="col-xs-12 i4_1"><div id="u2' + '_' + i + '_1" class="col-xs-4 c1 "> </div><div id="u2' + '_' + i + '_2" class="col-xs-4 c2"></div><div id="u2' + '_' + i + '_3" class="col-xs-4 c3"></div></div></li><div class="col-xs-12 ii2"></div>'
                     fr.append(str);
+                    for (let j = 0; j < da.length; j++) {
+                        $("#u2" + "_" + i + "_1").append('<p>' + da[j].name + '</p>');
+                        $("#u2" + "_" + i + "_2").append('<p class="p2">' + da[j].value + '</p>');
+                        $("#u2" + "_" + i + "_3").append('<p class="p2">' + da[j].value1 + '</p>');
+                    }
                 }
             }
         }
@@ -236,12 +263,43 @@ function showList() {
                     var month = res[i].date_month.substr(4);
                     var to = res[i].totaltax;
                     var to_r = res[i].totaltax_rate;
-                    var tht = res[i].thevattax;
-                    var tht_r = res[i].thevattax_rate;
-                    var inc = res[i].incometax;
-                    var inc_r = res[i].incometax_rate;
-                    var str = '<li><div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);"><div class="col-xs-5"><p class="p1" style="padding-left: 0px;">' + month + '</p><p class="p3">月份</p></div><div class="col-xs-3"><p class="p2">纳税总额</p><p class="p2">' + to + '</p></div><div class="col-xs-4"><p class="p2">综合纳税率</p><p class="p2">' + to_r + '</p></div></div></li><li><div class="col-xs-12 i4_1"><div class="col-xs-3 c1 "> <p>其中：增值税</p><p>所得税</p></div><div class="col-xs-5 c2"><p class="p2">' + inc + '</p><p class="p2">' + tht + '</p></div><div class="col-xs-4 c3"><p class="p2">' + inc_r + '</p><p class="p2">' + tht_r + '</p></div></div></li><div class="col-xs-12 ii2"></div>'
+                    var da = []; //存放有多少税
+                    var jj = {
+                        "thevattax": "增值税",
+                        "incometax": "所得税",
+                        "educationtax": "教育附加税",
+                        "educationaddtax": "地方教育附加税",
+                        "resourcetax": "资源税",
+                        "landaddtax": "土地增值税",
+                        "citytax": "城市维护建设税",
+                        "hometax": "房产税",
+                        "uselandtax": "土地使用税",
+                        "carusetax": "车船使用税",
+                        "stamptax": "印花税",
+                        "othertax": "其他税"
+                    }
+                    for (let s in res[i]) {
+                        if (jj.hasOwnProperty(s)) {
+                            var name = jj[s];
+                            var name_r = s + "_rate";
+                            var value = res[i][s];
+                            var value1 = res[i][name_r];
+                            var json = {
+                                "name": name,
+                                "value": value,
+                                "value1": value1
+                            };
+                            if (value != 0)
+                                da.push(json);
+                        }
+                    }
+                    var str = '<li><div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);"><div class="col-xs-4"><p class="p1">' + month + '</p><p class="p3">月份</p></div><div class="col-xs-4"><p class="p2">纳税总额</p><p class="p2">' + to + '</p></div><div class="col-xs-4"><p class="p2">综合纳税率</p><p class="p2">' + to_r + '</p></div></div></li><li><div class="col-xs-12 i4_1"><div id="u1' + '_' + i + '_1" class="col-xs-4 c1 "> </div><div id="u1' + '_' + i + '_2" class="col-xs-4 c2"></div><div id="u1' + '_' + i + '_3" class="col-xs-4 c3"></div></div></li><div class="col-xs-12 ii2"></div>'
                     fr1.append(str);
+                    for (let j = 0; j < da.length; j++) {
+                        $("#u1" + "_" + i + "_1").append('<p>' + da[j].name + '</p>');
+                        $("#u1" + "_" + i + "_2").append('<p class="p2">' + da[j].value + '</p>');
+                        $("#u1" + "_" + i + "_3").append('<p class="p2">' + da[j].value1 + '</p>');
+                    }
                 }
             }
         }

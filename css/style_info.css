@@ -84,3 +84,12 @@
 .sp1 {
     color: black;
 }
+
+.col-xs-3 {
+    text-align: left;
+    padding-left: 0px;
+}
+
+.col-xs-8 {
+    text-align: right;
+}

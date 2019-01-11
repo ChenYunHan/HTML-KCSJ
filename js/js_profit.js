@@ -9,8 +9,8 @@ function displayData() {
         url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/profitOverview",
         data: {
             "Param": {
-                "company_no": id,
-                "date": year
+                "company_no": "0000FX",
+                "date": "2017"
             }
         },
         dataType: "json",
@@ -38,8 +38,8 @@ function displayList() {
         url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/profitDetail",
         data: {
             "Param": {
-                "company_no": id,
-                "date": year,
+                "company_no": "0000FX",
+                "date": "2017"
             }
         },
         dataType: "json",
@@ -105,8 +105,8 @@ function drawing(ty) {
         url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/profitDetail",
         data: {
             "Param": {
-                "company_no": id,
-                "date": year
+                "company_no": "0000FX",
+                "date": "2018"
             }
         },
         dataType: "json",
@@ -155,7 +155,32 @@ function drawing(ty) {
                         type: 'line',
                         symbolSize: 6,
                         smooth: true,
-                        color: ['#66AEDE'],
+                        color: ['#81befd'],
+                        areaStyle: {
+                            normal: { //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                    offset: 0,
+                                    color: '#81befd'
+                                }, {
+                                    offset: 0.5,
+                                    color: '#e4f2ff'
+                                }, {
+                                    offset: 1,
+                                    color: '#fff'
+                                }]), //背景渐变色
+                            },
+                        }, //线条样式
+                        markPoint: {
+                            data: [{
+                                    type: 'max',
+                                    name: '最大值'
+                                },
+                                {
+                                    type: 'min',
+                                    name: '最小值'
+                                }
+                            ]
+                        },
                         data: function () {
                             var list = [];
                             var res = data.result;
