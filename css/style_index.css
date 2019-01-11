@@ -15,13 +15,13 @@
     border-style: solid;
     transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
     position: absolute;
-    top: 40%;
-    left: 86%;
+    top: 20%;
+    left: 96%;
 }
 
 .ra1::after {
     border-color: rgb(150, 216, 248);
-    left: 88%;
+    left: 100%;
 }
 
 .media-right {
@@ -46,6 +46,12 @@ a:hover {
 a:active {
     color: rgb(56, 56, 56);
     text-decoration: none
+}
+
+.dropdown-header {
+    padding: 0px;
+    font-size: 16px;
+    color: black;
 }
 
 .i4_1 {
@@ -83,4 +89,5 @@ a:active {
 
 .col-xs-7 {
     text-align: right;
+    /* position: relative; */
 }

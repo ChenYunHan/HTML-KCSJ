@@ -19,7 +19,7 @@
 }
 
 .new-right::after {
-    top: 22.5%;
+    top: 90%;
     left: 66%;
 }
 
@@ -82,10 +82,6 @@
     padding-top: 18px;
 }
 
-.i7_1 {
-    margin: 0;
-    padding-left: 40px;
-}
 
 .p1 {
     margin: 0;
@@ -95,6 +91,7 @@
 .new {
     font-size: 18px;
     color: black;
+    position: relative;
 }
 
 .media-body {

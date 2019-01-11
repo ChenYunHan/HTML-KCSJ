@@ -59,3 +59,11 @@ a:active {
     color: rgba(0, 0, 0, 0.5);
     text-decoration: none
 }
+
+.navbar-default {
+    background: #ffffff;
+}
+
+.logo {
+    padding: 0;
+}

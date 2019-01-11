@@ -148,7 +148,6 @@ function drawing() {
                         }
                     }]
                 });
-                // alert(data);
                 // var year = res.date_year;
                 // var tht = res.thevattax;
                 // var tht_a = res.thevattax_rate;
@@ -233,12 +232,14 @@ function showList() {
                                 da.push(json);
                         }
                     }
-                    var str = '<li><div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);"><div class="col-xs-4"><p class="p1">' + month + '</p><p class="p3">季度</p></div><div class="col-xs-4"><p class="p2">纳税总额</p><p class="p2">' + to + '</p></div><div class="col-xs-4"><p class="p2">综合纳税率</p><p class="p2">' + to_r + '</p></div></div></li><li><div class="col-xs-12 i4_1"><div id="u2' + '_' + i + '_1" class="col-xs-4 c1 "> </div><div id="u2' + '_' + i + '_2" class="col-xs-4 c2"></div><div id="u2' + '_' + i + '_3" class="col-xs-4 c3"></div></div></li><div class="col-xs-12 ii2"></div>'
-                    fr.append(str);
-                    for (let j = 0; j < da.length; j++) {
-                        $("#u2" + "_" + i + "_1").append('<p>' + da[j].name + '</p>');
-                        $("#u2" + "_" + i + "_2").append('<p class="p2">' + da[j].value + '</p>');
-                        $("#u2" + "_" + i + "_3").append('<p class="p2">' + da[j].value1 + '</p>');
+                    if (to != 0) {
+                        var str = '<li><div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);"><div class="col-xs-4"><p class="p1">' + month + '</p><p class="p3">季度</p></div><div class="col-xs-4 c0"><p class="p2">纳税总额</p><p class="p2">' + to + '</p></div><div class="col-xs-4 c0"><p class="p2">综合纳税率</p><p class="p2">' + to_r + '</p></div></div></li><li><div class="col-xs-12 i4_1"><div id="u2' + '_' + i + '_1" class="col-xs-4 c1 "> </div><div id="u2' + '_' + i + '_2" class="col-xs-4 c2"></div><div id="u2' + '_' + i + '_3" class="col-xs-4 c3"></div></div></li><div class="col-xs-12 ii2"></div>'
+                        fr.append(str);
+                        for (let j = 0; j < da.length; j++) {
+                            $("#u2" + "_" + i + "_1").append('<p>' + da[j].name + '</p>');
+                            $("#u2" + "_" + i + "_2").append('<p class="p2">' + da[j].value + '</p>');
+                            $("#u2" + "_" + i + "_3").append('<p class="p2">' + da[j].value1 + '</p>');
+                        }
                     }
                 }
             }
@@ -293,12 +294,14 @@ function showList() {
                                 da.push(json);
                         }
                     }
-                    var str = '<li><div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);"><div class="col-xs-4"><p class="p1">' + month + '</p><p class="p3">月份</p></div><div class="col-xs-4"><p class="p2">纳税总额</p><p class="p2">' + to + '</p></div><div class="col-xs-4"><p class="p2">综合纳税率</p><p class="p2">' + to_r + '</p></div></div></li><li><div class="col-xs-12 i4_1"><div id="u1' + '_' + i + '_1" class="col-xs-4 c1 "> </div><div id="u1' + '_' + i + '_2" class="col-xs-4 c2"></div><div id="u1' + '_' + i + '_3" class="col-xs-4 c3"></div></div></li><div class="col-xs-12 ii2"></div>'
-                    fr1.append(str);
-                    for (let j = 0; j < da.length; j++) {
-                        $("#u1" + "_" + i + "_1").append('<p>' + da[j].name + '</p>');
-                        $("#u1" + "_" + i + "_2").append('<p class="p2">' + da[j].value + '</p>');
-                        $("#u1" + "_" + i + "_3").append('<p class="p2">' + da[j].value1 + '</p>');
+                    if (to != 0) {
+                        var str = '<li><div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);"><div class="col-xs-4"><p class="p1">' + month + '</p><p class="p3">月份</p></div><div class="col-xs-4 c0"><p class="p2">纳税总额</p><p class="p2">' + to + '</p></div><div class="col-xs-4 c0"><p class="p2">综合纳税率</p><p class="p2">' + to_r + '</p></div></div></li><li><div class="col-xs-12 i4_1"><div id="u1' + '_' + i + '_1" class="col-xs-4 c1 "> </div><div id="u1' + '_' + i + '_2" class="col-xs-4 c2"></div><div id="u1' + '_' + i + '_3" class="col-xs-4 c3"></div></div></li><div class="col-xs-12 ii2"></div>'
+                        fr1.append(str);
+                        for (let j = 0; j < da.length; j++) {
+                            $("#u1" + "_" + i + "_1").append('<p>' + da[j].name + '</p>');
+                            $("#u1" + "_" + i + "_2").append('<p class="p2">' + da[j].value + '</p>');
+                            $("#u1" + "_" + i + "_3").append('<p class="p2">' + da[j].value1 + '</p>');
+                        }
                     }
                 }
             }

@@ -14,7 +14,7 @@
     border-style: solid;
     transform: matrix(0.71, 0.71, 0.71, -0.71, 0, 0);
     position: absolute;
-    top: 2.7%;
+    top: 33%;
     left: 78%;
     z-index: 3;
 }
@@ -22,10 +22,11 @@
 
 #d1 {
     width: 100%;
-    height: 56px;
+    height: 40px;
     background-color: white;
     font-size: 18px;
     color: black;
+    position: relative;
 }
 
 .b1 {
@@ -78,11 +79,10 @@
 
 .all {
     /* //用div的样式代替select的样式 */
-    width: 275px;
-    height: 40px;
+    width: 100%;
+    height: 100%;
     border-radius: 5px;
     /* //盒子阴影修饰作用,自己随意 */
-    box-shadow: 0 0 5px #ccc;
     position: relative;
 }
 
@@ -93,11 +93,11 @@ select {
     outline: none;
     /* //将select的宽高等于div的宽高 */
     width: 100%;
-    height: 40px;
     line-height: 40px;
     /* //隐藏select的下拉图标 */
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    padding-left: 2%;
+    background-color: aliceblue;
+    padding-left: 30px;
 }

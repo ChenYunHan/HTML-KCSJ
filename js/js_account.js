@@ -11,14 +11,15 @@ $.ajax({
             if ($.session.get("cno") == null) {
                 $.session.set("cno", bh);
             }
-            aj1($.session.get("cno"));
             la.html("");
-            la.append('<option id="' + bh + '">' + mc + '</option>')
+            la.append('<option value="' + bh + '">' + mc + '</option>')
             for (let i = 1; i < data.result.length; i++) {
                 bh = data.result[i].DWZD_BH;
                 mc = data.result[i].DWZD_MC;
-                la.append('<option id="' + bh + '">' + mc + '</option>');
+                la.append('<option value="' + bh + '">' + mc + '</option>');
             }
+            $("#u1").val($.session.get("cno"));
+            aj1($.session.get("cno"));
         }
     },
 });
@@ -39,6 +40,7 @@ function aj1(data) {
                 var rs = data.result;
                 //利润
                 var pf = rs.profit;
+                $.session.set("year1", pf.period.substr(0, 4));
                 var month = pf.period.substr(4, 5);
                 if (month.substr(0, 1) === "0") {
                     month = month.substr(1);
@@ -48,13 +50,14 @@ function aj1(data) {
                 $("#dd1").append('<p><span class="sp1">本年利润</span>' + pf.yearlyProfit + '</p>')
                 //纳税
                 pf = rs.tax;
+                $.session.set("year2", pf.date_quarter.substr(0, 4));
                 month = pf.date_quarter.substr(5);
                 $("#dd2").html("");
                 $("#dd2").append('<p><span class="sp1">' + month + '季度纳税</span>' + pf.quarterlyTax + '</p>')
                 $("#dd2").append('<p><span class="sp1">本年纳税</span>' + pf.yearlyTax + '</p>')
                 //账款
                 pf = rs.receivable;
-                $.session.set("year", pf.period);
+                $.session.set("year3", pf.period);
                 month = pf.period.substr(4, 5);
                 if (month.substr(0, 1) === "0") {
                     month = month.substr(1);
@@ -67,8 +70,7 @@ function aj1(data) {
 }
 
 $("#u1").change(function (e) {
-    e.preventDefault();
-    var id = $("#u1 option:selected").attr("id");
+    var id = $("#u1").val();
     $.session.set("cno", id);
     aj1(id);
 });

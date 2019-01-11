@@ -29,7 +29,7 @@
         </div>
         <div id="d2">
             <div id="leA" class="left-arrow"></div>
-            <p id="year" style="padding-top: 10px;">2018年</p>
+            <p id="year" style="padding-top: 10px;"></p>
             <div id="riA" class="right-arrow"></div>
         </div>
         <div id="row ">
@@ -76,22 +76,26 @@
     <script src="./js/echarts.js"></script>
     <script src="./js/js_profit.js"></script>
     <script>
+        $("#year").html($.session.get("year1") + '年');
         displayData();
         displayList();
         drawing("li1");
         var year = $("#year").text();
         year = year.substr(0, year.length - 1);
         year = parseInt(year);
+        max = year;
+        min = year - 5;
         $("#riA").click(function () {
-            year++;
+            if (year < max)
+                year++;
             $("#year").html(year + "年");
             displayData();
             displayList();
             switch1();
         });
         $("#leA").click(function (e) {
-            e.preventDefault();
-            year--;
+            if (year > min)
+                year--;
             $("#year").html(year + "年");
             displayData();
             displayList();

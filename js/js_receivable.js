@@ -28,7 +28,7 @@ function down(x, y) {
 
 function showList() {
     var uu = $("#u1");
-    var year = $.session.get("year");
+    var year = $.session.get("year3");
     $.ajax({
         type: "post",
         url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/getReceivables",
