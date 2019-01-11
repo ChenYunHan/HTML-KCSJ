@@ -86,7 +86,7 @@ function drawing() {
             }, //数组中一个{}元素，一个图，以此可以做出环形图
         ], //系列列表
     });
-    id = $.cookie("cno");
+    id = $.session.get("cno");
     year = $("#year").text();
     year = year.substr(0, year.length - 1);
     $.ajax({
@@ -182,7 +182,7 @@ function drawing() {
 function showList() {
     var fr = $("#u1");
     var fr1 = $("#u2");
-    id = $.cookie("cno");
+    id = $.session.get("cno");
     year = $("#year").text();
     year = year.substr(0, year.length - 1);
     $.ajax({

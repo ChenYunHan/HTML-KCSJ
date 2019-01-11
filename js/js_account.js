@@ -8,10 +8,10 @@ $.ajax({
         if (data.errorCode == "1200") {
             var bh = data.result[0].DWZD_BH;
             var mc = data.result[0].DWZD_MC;
-            $.cookie("cno", bh, {
-                expires: 1,
-            });
-            aj1(bh);
+            if ($.session.get("cno") == null) {
+                $.session.set("cno", bh);
+            }
+            aj1($.session.get("cno"));
             la.html("");
             la.append('<option id="' + bh + '">' + mc + '</option>')
             for (let i = 1; i < data.result.length; i++) {
@@ -54,7 +54,7 @@ function aj1(data) {
                 $("#dd2").append('<p><span class="sp1">本年纳税</span>' + pf.yearlyTax + '</p>')
                 //账款
                 pf = rs.receivable;
-                $.cookie("year", pf.period);
+                $.session.set("year", pf.period);
                 month = pf.period.substr(4, 5);
                 if (month.substr(0, 1) === "0") {
                     month = month.substr(1);
@@ -69,9 +69,6 @@ function aj1(data) {
 $("#u1").change(function (e) {
     e.preventDefault();
     var id = $("#u1 option:selected").attr("id");
-    $.cookie("cno", id, {
-        expires: 1,
-    });
+    $.session.set("cno", id);
     aj1(id);
-
 });

@@ -1,7 +1,7 @@
 var myChart;
 
 function displayData() {
-    var id = $.cookie("cno");
+    var id = $.session.get("cno");
     var year = $("#year").text();
     var year = year.substr(0, year.length - 1);
     $.ajax({
@@ -9,8 +9,8 @@ function displayData() {
         url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/profitOverview",
         data: {
             "Param": {
-                "company_no": "0000FX",
-                "date": "2017"
+                "company_no": id,
+                "date": year
             }
         },
         dataType: "json",
@@ -29,7 +29,7 @@ function displayData() {
 }
 
 function displayList() {
-    var id = $.cookie("cno");
+    var id = $.session.get("cno");
     var year = $("#year").text();
     var year = year.substr(0, year.length - 1);
     var ll = $("#u1").html("");
@@ -38,8 +38,8 @@ function displayList() {
         url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/profitDetail",
         data: {
             "Param": {
-                "company_no": "0000FX",
-                "date": "2017"
+                "company_no": id,
+                "date": year
             }
         },
         dataType: "json",
@@ -85,7 +85,7 @@ function drawing(ty) {
     }
     myChart = echarts.init(document.getElementById("box"));
     myChart.showLoading();
-    id = $.cookie("cno");
+    id = $.session.get("cno");
     year = $("#year").text();
     year = year.substr(0, year.length - 1);
     var che;
@@ -105,8 +105,8 @@ function drawing(ty) {
         url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/profitDetail",
         data: {
             "Param": {
-                "company_no": "0000FX",
-                "date": "2018"
+                "company_no": id,
+                "date": year
             }
         },
         dataType: "json",

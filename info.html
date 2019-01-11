@@ -10,10 +10,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_info.css">
     <script src="./js/jquery-3.3.1.js"></script>
-    <script src="./js/jquery.cookie.js"></script>
     <script src="./js/jquerysession.js"></script>
     <script>
-        if ($.cookie("name") == null) {
+        if ($.session.get("name") == null) {
             window.location.href = "./login.html?error=1";
         }
     </script>
@@ -69,7 +68,7 @@
 
     <script src="./js/bootstrap.min.js"></script>
     <script>
-        var name = $.cookie('name')
+        var name = $.session.get("name")
         $('#tel1').html('<span>' + name + '</span>')
     </script>
 </body>

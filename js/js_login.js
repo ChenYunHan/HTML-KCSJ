@@ -40,9 +40,6 @@ $("#d2_b1").click(function () {
             dataType: 'json',
             success: function (data) {
                 if (data.errorCode == "1200") {
-                    $.cookie('name', name, {
-                        expires: 1,
-                    });
                     $.session.set("name", name);
                     window.location.href = "./mine.html";
                 }

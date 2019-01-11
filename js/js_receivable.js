@@ -1,4 +1,4 @@
-var cno = $.cookie("cno");
+var cno = $.session.get("cno");
 $.ajax({
     type: "post",
     url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/financialOverview",
@@ -28,7 +28,7 @@ function down(x, y) {
 
 function showList() {
     var uu = $("#u1");
-    var year = $.cookie("year");
+    var year = $.session.get("year");
     $.ajax({
         type: "post",
         url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/getReceivables",
@@ -61,9 +61,6 @@ function showList() {
                     str = '<div><div class="col-xs-12 i4_1"><p class="col-xs-9 pp1">' + json[i].dw + '</p><p class="col-xs-3 pp1">' + json[i].jy + '</p></div></li>';
                     uu.append(str);
                 }
-
-
-
             }
         }
     });
