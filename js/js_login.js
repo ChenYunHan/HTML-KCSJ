@@ -42,7 +42,8 @@ $("#d2_b1").click(function () {
                 if (data.errorCode == "1200") {
                     $.cookie('name', name, {
                         expires: 1,
-                    })
+                    });
+                    $.session.set("name", name);
                     window.location.href = "./mine.html";
                 }
             },

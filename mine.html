@@ -173,10 +173,10 @@
     <script src="./js/jquery-3.3.1.js"></script>
     <script src="./js/jquery.cookie.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquerysession.js"></script>
     <script>
         if ($.cookie('name') != null) {
             var url = $.cookie('name');
-            // $.cookie('name', null);
             if (url != null && url.length > 0) {
                 var url2 = url.substr(0, 3) + "****" + url.substr(7);
                 $("#dd").html("<a href='./info.html'><div class='center-block new'>" + url +
