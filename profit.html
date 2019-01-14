@@ -16,7 +16,6 @@
             window.location.href = "./login.html?error=1";
         }
     </script>
-
 </head>
 
 <body>
@@ -76,6 +75,8 @@
     <script src="./js/echarts.js"></script>
     <script src="./js/js_profit.js"></script>
     <script>
+        var myDate = new Date();
+        fullYear = myDate.getFullYear();
         $("#year").html($.session.get("year1") + '年');
         displayData();
         displayList();
@@ -83,25 +84,56 @@
         var year = $("#year").text();
         year = year.substr(0, year.length - 1);
         year = parseInt(year);
-        max = year;
-        min = year - 5;
+        max = fullYear;
+        min = fullYear - 5;
+
+        function displayArrow() {
+            if (year == max) {
+                $("#riA").fadeOut();
+            } else {
+                $("#riA").fadeIn();
+            }
+            if (year == min) {
+                $("#leA").fadeOut();
+            } else {
+                $("#leA").fadeIn();
+            }
+        }
+        displayArrow();
         $("#riA").click(function () {
             if (year < max)
                 year++;
+            displayArrow()
             $("#year").html(year + "年");
             displayData();
             displayList();
-            switch1();
+            $('a[aria-expanded="true"]').trigger('shown.bs.tab')
         });
         $("#leA").click(function (e) {
             if (year > min)
                 year--;
+            displayArrow()
             $("#year").html(year + "年");
             displayData();
             displayList();
-            switch1();
+            $('a[aria-expanded="true"]').trigger('shown.bs.tab')
         });
-        switch1();
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            // 获取已激活的标签页的id
+            var id = $(e.target).attr("id");
+            var str = '<div id="box" style="width: 100%;height:400px"></div>';
+            $("#income").html("");
+            $("#cost").html("");
+            $("#profit").html("");
+            if (id == "li1") {
+                $("#income").html(str)
+            } else if (id == "li2") {
+                $("#cost").html(str)
+            } else if (id == "li3") {
+                $("#profit").html(str)
+            }
+            drawing(id);
+        })
     </script>
 </body>
 

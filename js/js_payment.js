@@ -28,37 +28,44 @@ function drawing() {
             x: 'center',
         }, //图例属性
         graphic: [{
-                type: 'text',
-                left: "center",
-                top: '33%',
-                style: {
-                    text: '纳税总额\n' + 0 + '\n\n\n' + '综合税负\n' + 0 + '%', //使用“+”可以使每行文字居中
-                    textAlign: 'center',
-                    font: '15px Arial',
-                    fill: '#000',
-                }
-            }, {
-                type: 'text',
-                left: 'center',
-                bottom: '26%',
-                style: {
-                    text: '超出综合税负率标准范围\n' + '(4-8%)', //使用“+”可以使每行文字居中
-                    textAlign: 'center',
-                    font: '11px Arial',
-                    fill: 'red',
-                }
-            },
-            {
-                type: 'image',
-                left: '3%',
-                top: '3%',
-                style: {
-                    image: "./img/u105.png",
-                    textAlign: "center",
-                    width: 30,
-                }
+            type: 'text',
+            left: "center",
+            top: '33%',
+            style: {
+                text: '纳税总额\n' + 0 + '\n\n\n' + '综合税负\n' + 0 + '%', //使用“+”可以使每行文字居中
+                textAlign: 'center',
+                font: '15px Arial',
+                fill: '#000',
             }
-        ], //此例饼状图为圆环中心文字显示属性，这是一个原生图形元素组件，功能很多
+        }, {
+            type: 'text',
+            left: 'center',
+            bottom: '26%',
+            style: {
+                text: '超出综合税负率标准范围\n' + '(4-8%)', //使用“+”可以使每行文字居中
+                textAlign: 'center',
+                font: '11px Arial',
+                fill: 'red',
+            }
+        }, {
+            type: 'image',
+            left: '3%',
+            top: '3%',
+            style: {
+                image: "./img/u105.png",
+                textAlign: "center",
+                width: 30,
+            }
+        }, {
+            type: 'image',
+            left: '58%',
+            top: '45%',
+            style: {
+                image: "./img/u106.png",
+                textAlign: "center",
+                width: 30,
+            }
+        }], //此例饼状图为圆环中心文字显示属性，这是一个原生图形元素组件，功能很多
         series: [{
                 name: '税负统计', //tooltip提示框中显示内容
                 type: 'pie', //图形类型，如饼状图，柱状图等
@@ -131,6 +138,12 @@ function drawing() {
                             da.push(json);
                     }
                 }
+                var url = 'u108'
+                if (to_r < 4) {
+                    url = 'u107'
+                } else if (to_r > 8) {
+                    url = 'u106'
+                }
                 myChart1.hideLoading();
                 myChart1.setOption({
                     series: [{
@@ -145,6 +158,34 @@ function drawing() {
                             textAlign: 'center',
                             font: '15px Arial',
                             fill: '#000',
+                        }
+                    }, {
+                        type: 'text',
+                        left: 'center',
+                        bottom: '26%',
+                        style: {
+                            text: '超出综合税负率标准范围\n' + '(4-8%)', //使用“+”可以使每行文字居中
+                            textAlign: 'center',
+                            font: '11px Arial',
+                            fill: 'red',
+                        }
+                    }, {
+                        type: 'image',
+                        left: '3%',
+                        top: '3%',
+                        style: {
+                            image: "./img/u105.png",
+                            textAlign: "center",
+                            width: 30,
+                        }
+                    }, {
+                        type: 'image',
+                        left: '58%',
+                        top: '45%',
+                        style: {
+                            image: "./img/" + url + ".png",
+                            textAlign: "center",
+                            width: 30,
                         }
                     }]
                 });
@@ -232,8 +273,13 @@ function showList() {
                                 da.push(json);
                         }
                     }
+                    var url = "u108";
+                    if (to_r < 4)
+                        url = "u107"
+                    else if (to_r > 8)
+                        url = "u106"
                     if (to != 0) {
-                        var str = '<li><div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);"><div class="col-xs-4"><p class="p1">' + month + '</p><p class="p3">季度</p></div><div class="col-xs-4 c0"><p class="p2">纳税总额</p><p class="p2">' + to + '</p></div><div class="col-xs-4 c0"><p class="p2">综合纳税率</p><p class="p2">' + to_r + '</p></div></div></li><li><div class="col-xs-12 i4_1"><div id="u2' + '_' + i + '_1" class="col-xs-4 c1 "> </div><div id="u2' + '_' + i + '_2" class="col-xs-4 c2"></div><div id="u2' + '_' + i + '_3" class="col-xs-4 c3"></div></div></li><div class="col-xs-12 ii2"></div>'
+                        var str = '<li><div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);"><div class="col-xs-4"><p class="p1">' + month + '</p><p class="p3">季度</p></div><div class="col-xs-4 c0"><p class="p2">纳税总额</p><p class="p2">' + to + '</p></div><div class="col-xs-4 c0"><p class="p2">综合纳税率</p><p class="p2">' + to_r + '</p><img class="img1" src="./img/' + url + '.png"></div></div></li><li><div class="col-xs-12 i4_1"><div id="u2' + '_' + i + '_1" class="col-xs-4 c1 "> </div><div id="u2' + '_' + i + '_2" class="col-xs-4 c2"></div><div id="u2' + '_' + i + '_3" class="col-xs-4 c3"></div></div></li><div class="col-xs-12 ii2"></div>'
                         fr.append(str);
                         for (let j = 0; j < da.length; j++) {
                             $("#u2" + "_" + i + "_1").append('<p>' + da[j].name + '</p>');
@@ -294,8 +340,13 @@ function showList() {
                                 da.push(json);
                         }
                     }
+                    var url = "u108";
+                    if (to_r < 4)
+                        url = "u107"
+                    else if (to_r > 8)
+                        url = "u106"
                     if (to != 0) {
-                        var str = '<li><div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);"><div class="col-xs-4"><p class="p1">' + month + '</p><p class="p3">月份</p></div><div class="col-xs-4 c0"><p class="p2">纳税总额</p><p class="p2">' + to + '</p></div><div class="col-xs-4 c0"><p class="p2">综合纳税率</p><p class="p2">' + to_r + '</p></div></div></li><li><div class="col-xs-12 i4_1"><div id="u1' + '_' + i + '_1" class="col-xs-4 c1 "> </div><div id="u1' + '_' + i + '_2" class="col-xs-4 c2"></div><div id="u1' + '_' + i + '_3" class="col-xs-4 c3"></div></div></li><div class="col-xs-12 ii2"></div>'
+                        var str = '<li><div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);"><div class="col-xs-4"><p class="p1">' + month + '</p><p class="p3">月份</p></div><div class="col-xs-4 c0"><p class="p2">纳税总额</p><p class="p2">' + to + '</p></div><div class="col-xs-4 c0"><p class="p2">综合纳税率</p><p class="p2">' + to_r + '</p><img class="img1" src="./img/' + url + '.png"></div></div></li><li><div class="col-xs-12 i4_1"><div id="u1' + '_' + i + '_1" class="col-xs-4 c1 "> </div><div id="u1' + '_' + i + '_2" class="col-xs-4 c2"></div><div id="u1' + '_' + i + '_3" class="col-xs-4 c3"></div></div></li><div class="col-xs-12 ii2"></div>'
                         fr1.append(str);
                         for (let j = 0; j < da.length; j++) {
                             $("#u1" + "_" + i + "_1").append('<p>' + da[j].name + '</p>');

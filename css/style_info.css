@@ -93,3 +93,16 @@
 .col-xs-8 {
     text-align: right;
 }
+
+input,
+input:focus {
+    border: none !important;
+    box-shadow: none !important;
+    /* outline: none; */
+}
+
+#dd1 {
+    position: absolute;
+    left: 10%;
+    top: 60%;
+}

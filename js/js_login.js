@@ -7,13 +7,17 @@ $("#name").blur(function () {
         $("#dd1").fadeIn();
         $("#name").css("background-color", "rgb(243,221,221)");
         boolean1 = false;
+        $("#fd1 .img2").show();
+        $("#fd1 .img1").hide();
     } else {
-        $("#frm1_1").css("border", "1px,solid,rgb(243,221,221)");
+        $("#fd1 .img1").show();
+        $("#fd1 .img2").hide();
         boolean1 = true;
     }
 })
 $("#name").focus(function () {
     $("#dd1").fadeOut();
+    $("#fd1 .img2").hide();
     $("#name").css("background-color", "white");
 })
 $("#pwd").blur(function () {
@@ -23,12 +27,17 @@ $("#pwd").blur(function () {
         $("#dd2").fadeIn();
         $("#pwd").css("background-color", "rgb(243,221,221)");
         boolean2 = false;
+        $("#fd2 .img2").show();
+        $("#fd2 .img1").hide();
     } else {
+        $("#fd2 .img1").show();
+        $("#fd2 .img2").hide();
         boolean2 = true;
     }
 })
 $("#pwd").focus(function () {
     $("#dd2").fadeOut();
+    $("#fd2 .img2").hide();
     $("#pwd").css("background-color", "white");
 })
 $("#d2_b1").click(function () {
@@ -41,7 +50,8 @@ $("#d2_b1").click(function () {
             success: function (data) {
                 if (data.errorCode == "1200") {
                     $.session.set("name", name);
-                    window.location.href = "./mine.html";
+                    $("#dd5").fadeIn();
+                    window.setTimeout("javascript:window.location.href = './mine.html'", 1500);
                 }
             },
         });
@@ -56,4 +66,9 @@ function GetQueryString(name) {
     var r = window.location.search.substr(1).match(reg); //search,查询？后面的参数，并匹配正则
     if (r != null) return unescape(r[2]);
     return null;
+}
+
+if (GetQueryString("error") == "1") {
+    $("#dd4").fadeIn();
+    $("#dd4").delay(1000).fadeOut();
 }

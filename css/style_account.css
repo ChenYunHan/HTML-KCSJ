@@ -86,18 +86,104 @@
     position: relative;
 }
 
-select {
-    /* //清除select的边框样式 */
-    border: none;
-    /* //清除select聚焦时候的边框颜色 */
-    outline: none;
-    /* //将select的宽高等于div的宽高 */
+/* ===== retrie分类下来 ===== */
+.retrie {
+    position: relative;
+    z-index: 102;
+    height: 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.retrie dt {
+    overflow: hidden
+}
+
+.retrie dt a {
+    position: relative;
+    float: left;
     width: 100%;
-    line-height: 40px;
-    /* //隐藏select的下拉图标 */
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-color: aliceblue;
-    padding-left: 30px;
+    height: 49px;
+    line-height: 50px;
+    color: #333;
+    font-size: 14px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.retrie dt a:after {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    margin-top: -4px;
+    margin-left: 30px;
+    width: 8px;
+    height: 8px;
+    border: #666 solid;
+    border-width: 1px 1px 0 0;
+    content: ' ';
+    -webkit-transform: rotate(135deg);
+}
+
+.retrie dt .up {
+    color: #007ccf;
+    border-bottom: 2px solid #007ccf;
+}
+
+.retrie dt .up:after {
+    margin-top: 0;
+    border: #007ccf solid;
+    border-width: 1px 1px 0 0;
+    -webkit-transform: rotate(-45deg);
+}
+
+.retrie dt a:last-child:before {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    display: block;
+    width: 1px;
+    height: 30px;
+    background-color: #ebebeb;
+    content: ' ';
+}
+
+.retrie dd {
+    position: relative;
+}
+
+/* ===== slide-area ===== */
+.slide {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: 104;
+    display: none;
+    width: 100%;
+    overflow-y: auto;
+    background-color: #fff;
+    padding: 0px;
+}
+
+.slide li {
+    display: block;
+    height: 50px;
+    border-bottom: 1px solid #eee;
+}
+
+.slide li a {
+    display: block;
+    padding: 0 30px;
+    height: 50px;
+    background-color: transparent;
+    line-height: 50px;
+}
+
+.slide li a:hover,
+.slide li a.selected {
+    background-color: #f6f6f6;
+}
+
+.slide li a.select {
+    background-color: #fff;
 }

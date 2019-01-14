@@ -6,17 +6,19 @@ $.ajax({
     dataType: 'json',
     success: function (data) {
         if (data.errorCode == "1200") {
+            la.html("");
             var bh = data.result[0].DWZD_BH;
-            var mc = data.result[0].DWZD_MC;
             if ($.session.get("cno") == null) {
                 $.session.set("cno", bh);
             }
-            la.html("");
-            la.append('<option value="' + bh + '">' + mc + '</option>')
-            for (let i = 1; i < data.result.length; i++) {
+            for (let i = 0; i < data.result.length; i++) {
                 bh = data.result[i].DWZD_BH;
-                mc = data.result[i].DWZD_MC;
-                la.append('<option value="' + bh + '">' + mc + '</option>');
+                var mc = data.result[i].DWZD_MC;
+                var str = '<li value="' + bh + '"><a>' + mc + '</a></li>'
+                if ($.session.get("cno") == bh) {
+                    $("#area").text(mc);
+                }
+                la.append(str);
             }
             $("#u1").val($.session.get("cno"));
             aj1($.session.get("cno"));
@@ -69,8 +71,17 @@ function aj1(data) {
     });
 }
 
-$("#u1").change(function (e) {
-    var id = $("#u1").val();
+// $("#u1").change(function (e) {
+//     var id = $("#u1").val();
+//     $.session.set("cno", id);
+//     aj1(id);
+// });
+
+$("#u1").on("click", "li", function () {
+    var id = $(this).attr("value");
     $.session.set("cno", id);
     aj1(id);
-});
+    $("#area").text($(this).text());
+    $(".retrie dt a").removeClass('up');
+    $('.downlist').slideUp();
+})

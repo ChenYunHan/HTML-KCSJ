@@ -60,24 +60,6 @@ function displayList() {
     })
 }
 
-function switch1() {
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-        // 获取已激活的标签页的id
-        var id = $(e.target).attr("id");
-        var str = '<div id="box" style="width: 100%;height:400px"></div>';
-        $("#income").html("");
-        $("#cost").html("");
-        $("#profit").html("");
-        if (id == "li1") {
-            $("#income").html(str)
-        } else if (id == "li2") {
-            $("#cost").html(str)
-        } else if (id == "li3") {
-            $("#profit").html(str)
-        }
-        drawing(id);
-    })
-}
 
 function drawing(ty) {
     if (myChart != null && myChart != "" && myChart != undefined) {
@@ -102,7 +84,7 @@ function drawing(ty) {
     }
     $.ajax({
         type: "POST",
-        url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/profitDetail",
+        url: "https://www.easy-mock.com/mock/5c345ed47db0f179db2028af/api/OpenAPIService/profitDetail",
         data: {
             "Param": {
                 "company_no": id,

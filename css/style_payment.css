@@ -76,6 +76,11 @@ img {
     border-radius: 14px;
 }
 
+img.img1 {
+    top: 35px;
+    left: 88%;
+}
+
 .ii2 {
     background-color: rgba(201, 166, 197, 0.075);
     height: 9px;
