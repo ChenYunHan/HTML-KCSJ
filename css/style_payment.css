@@ -13,7 +13,7 @@
     border-style: solid;
     transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
     position: absolute;
-    top: 9.8%;
+    top: 40%;
     left: 57.5%;
 }
 
@@ -32,7 +32,7 @@
     border-style: solid;
     transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
     position: absolute;
-    top: 9.8%;
+    top: 40%;
     left: 40%;
 }
 
@@ -42,7 +42,7 @@
     border-width: 2px 2px 0 0;
     border-color: white;
     left: 5%;
-    top: 20px;
+    top: 22px;
 }
 
 .d1_1 {
@@ -66,6 +66,7 @@
     font-size: 14px;
     color: black;
     text-align: center;
+    position: relative;
 }
 
 img {

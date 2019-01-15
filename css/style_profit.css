@@ -13,8 +13,8 @@
     border-style: solid;
     transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
     position: absolute;
-    top: 9.8%;
-    left: 57.5%;
+    top: 40%;
+    left: 58%;
 }
 
 /*左箭头*/
@@ -32,7 +32,7 @@
     border-style: solid;
     transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
     position: absolute;
-    top: 9.8%;
+    top: 40%;
     left: 40%;
 }
 
@@ -41,7 +41,7 @@
     width: 11px;
     border-width: 2px 2px 0 0;
     left: 5%;
-    top: 20px;
+    top: 22px;
 }
 
 .i4_1 {
@@ -73,7 +73,7 @@
     font-size: 14px;
     color: black;
     text-align: center;
-
+    position: relative;
 }
 
 p {

@@ -73,8 +73,9 @@
     padding-top: 20px;
 }
 
-.sp1 {
-    margin-right: 20px;
+.col-xs-5 {
+    text-align: right;
+    padding-bottom: 10px;
 }
 
 .all {

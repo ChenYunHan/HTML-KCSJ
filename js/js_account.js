@@ -48,15 +48,15 @@ function aj1(data) {
                     month = month.substr(1);
                 }
                 $("#dd1").html("");
-                $("#dd1").append('<p><span class="sp1">' + month + '月利润</span>' + pf.monthlyProfit + '</p>')
-                $("#dd1").append('<p><span class="sp1">本年利润</span>' + pf.yearlyProfit + '</p>')
+                $("#dd1").append('<div class="col-xs-5">' + month + '月利润</div><div class="col-xs-5">' + pf.monthlyProfit + '</div>')
+                $("#dd1").append('<div class="col-xs-5">本年利润</div><div class="col-xs-5">' + pf.yearlyProfit + '</div>')
                 //纳税
                 pf = rs.tax;
                 $.session.set("year2", pf.date_quarter.substr(0, 4));
                 month = pf.date_quarter.substr(5);
                 $("#dd2").html("");
-                $("#dd2").append('<p><span class="sp1">' + month + '季度纳税</span>' + pf.quarterlyTax + '</p>')
-                $("#dd2").append('<p><span class="sp1">本年纳税</span>' + pf.yearlyTax + '</p>')
+                $("#dd2").append('<div class="col-xs-5">' + month + '季度纳税</div><div class="col-xs-5">' + pf.quarterlyTax + '</div>')
+                $("#dd2").append('<div class="col-xs-5">本年纳税</div><div class="col-xs-5">' + pf.yearlyTax + '</div>')
                 //账款
                 pf = rs.receivable;
                 $.session.set("year3", pf.period);
@@ -65,7 +65,7 @@ function aj1(data) {
                     month = month.substr(1);
                 }
                 $("#dd3").html("");
-                $("#dd3").append('<p><span class="sp1">' + month + '月余额</span>' + pf.receivable + '</p>')
+                $("#dd3").append('<div class="col-xs-5">' + month + '月余额</div><div class="col-xs-5">' + pf.receivable + '</div>')
             }
         },
     });

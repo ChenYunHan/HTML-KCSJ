@@ -1,12 +1,7 @@
 var myChart1;
 
-function drawing() {
-    if (myChart1 != null && myChart1 != "" && myChart1 != undefined) {
-        myChart1.dispose();
-    }
-    myChart1 = echarts.init(document.getElementById('box'));
-    myChart1.showLoading();
-    myChart1.setOption({
+function setOption1(pad, to, to_r, str, col, url, da) {
+    var option = {
         backgroundColor: 'white',
         title: {
             text: '纳税情况',
@@ -26,13 +21,14 @@ function drawing() {
             orient: 'horizontal',
             y: 'bottom',
             x: 'center',
+            padding: pad,
         }, //图例属性
         graphic: [{
             type: 'text',
             left: "center",
             top: '33%',
             style: {
-                text: '纳税总额\n' + 0 + '\n\n\n' + '综合税负\n' + 0 + '%', //使用“+”可以使每行文字居中
+                text: '纳税总额\n' + to + '\n\n\n' + '综合税负\n' + to_r + '%', //使用“+”可以使每行文字居中
                 textAlign: 'center',
                 font: '15px Arial',
                 fill: '#000',
@@ -42,10 +38,10 @@ function drawing() {
             left: 'center',
             bottom: '26%',
             style: {
-                text: '超出综合税负率标准范围\n' + '(4-8%)', //使用“+”可以使每行文字居中
+                text: str, //使用“+”可以使每行文字居中
                 textAlign: 'center',
                 font: '11px Arial',
-                fill: 'red',
+                fill: col,
             }
         }, {
             type: 'image',
@@ -61,7 +57,7 @@ function drawing() {
             left: '58%',
             top: '45%',
             style: {
-                image: "./img/u106.png",
+                image: "./img/" + url + ".png",
                 textAlign: "center",
                 width: 30,
             }
@@ -88,14 +84,25 @@ function drawing() {
                         textColor: '#000'
                     } //鼠标放在各个区域的样式
                 },
-                data: [], //数据，数据中其他属性，查阅文档
+                data: da, //数据，数据中其他属性，查阅文档
                 color: ['#10BEC6', '#FFB703', '#5FA0FA', "#ff6400", "#dda0dd", "#602dd6", "#ceda65", "#e60f65", "#df0fe6", "#0fe6c0", "#0fe669", "#ce3a3a"], //各个区域颜色
             }, //数组中一个{}元素，一个图，以此可以做出环形图
         ], //系列列表
-    });
+    }
+    myChart1.hideLoading();
+    myChart1.setOption(option);
+}
+
+function drawing() {
+    if (myChart1 != null && myChart1 != "" && myChart1 != undefined) {
+        myChart1.dispose();
+    }
+    myChart1 = echarts.init(document.getElementById('box'));
+    myChart1.showLoading();
     id = $.session.get("cno");
     year = $("#year").text();
     year = year.substr(0, year.length - 1);
+    var pad = 0;
     $.ajax({
         type: "post",
         url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/yearlyTaxOverview",
@@ -126,6 +133,7 @@ function drawing() {
                     "stamptax": "印花税",
                     "othertax": "其他税"
                 }
+                var len = 0;
                 for (let s in res) {
                     if (jj.hasOwnProperty(s)) {
                         var name = jj[s];
@@ -134,61 +142,30 @@ function drawing() {
                             "value": value,
                             "name": name + "￥" + value
                         };
-                        if (value != 0)
+                        if (value != 0) {
+                            len++
                             da.push(json);
+                        }
                     }
                 }
                 var url = 'u108'
+                var str = "处于综合税负率标准范围\n" + "(4-8%)";
+                var col = "black";
                 if (to_r < 4) {
                     url = 'u107'
+                    str = "低于综合税负率标准范围\n" + "(4-8%)"
+                    col = "red"
                 } else if (to_r > 8) {
                     url = 'u106'
+                    str = "高于综合税负率标准范围\n" + "(4-8%)"
+                    col = "red"
                 }
-                myChart1.hideLoading();
-                myChart1.setOption({
-                    series: [{
-                        data: da,
-                    }],
-                    graphic: [{
-                        type: 'text',
-                        left: "center",
-                        top: '33%',
-                        style: {
-                            text: '纳税总额\n' + to + '\n\n\n' + '综合税负\n' + to_r + '%', //使用“+”可以使每行文字居中
-                            textAlign: 'center',
-                            font: '15px Arial',
-                            fill: '#000',
-                        }
-                    }, {
-                        type: 'text',
-                        left: 'center',
-                        bottom: '26%',
-                        style: {
-                            text: '超出综合税负率标准范围\n' + '(4-8%)', //使用“+”可以使每行文字居中
-                            textAlign: 'center',
-                            font: '11px Arial',
-                            fill: 'red',
-                        }
-                    }, {
-                        type: 'image',
-                        left: '3%',
-                        top: '3%',
-                        style: {
-                            image: "./img/u105.png",
-                            textAlign: "center",
-                            width: 30,
-                        }
-                    }, {
-                        type: 'image',
-                        left: '58%',
-                        top: '45%',
-                        style: {
-                            image: "./img/" + url + ".png",
-                            textAlign: "center",
-                            width: 30,
-                        }
-                    }]
-                });
+                if (5 <= len && len <= 7) {
+                    pad = 35;
+                } else if (8 <= len && len <= 10) {
+                    pad = 15;
+                }
+                setOption1(pad, to, to_r, str, col, url, da);
                 // var year = res.date_year;
                 // var tht = res.thevattax;
                 // var tht_a = res.thevattax_rate;
