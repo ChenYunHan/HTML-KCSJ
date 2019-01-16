@@ -105,7 +105,7 @@ function drawing(ty) {
                     calculable: true,
                     xAxis: [{
                         axisTick: {
-                            show: false
+                            show: false,
                         },
                         axisLine: {
                             lineStyle: {
@@ -153,6 +153,7 @@ function drawing(ty) {
                             },
                         }, //线条样式
                         markPoint: {
+
                             data: [{
                                     type: 'max',
                                     name: '最大值'
@@ -162,6 +163,21 @@ function drawing(ty) {
                                     name: '最小值'
                                 }
                             ]
+                        },
+                        markLine: {
+                            lineStyle: {
+                                normal: {
+                                    color: 'rgba(88, 88, 88, 0.4)'
+                                }
+                            },
+                            data: [{
+                                type: 'average',
+                                name: '平均值'
+                            }],
+                            label: {
+                                position: "middle",
+                            },
+                            symbol: false,
                         },
                         data: function () {
                             var list = [];

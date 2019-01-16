@@ -285,6 +285,9 @@ function showList() {
                 fr1.html("");
                 for (let i = 0; i < res.length; i++) {
                     var month = res[i].date_month.substr(4);
+                    if (month.substr(0, 1) === "0") {
+                        month = month.substr(1);
+                    }
                     var to = res[i].totaltax;
                     var to_r = res[i].totaltax_rate;
                     var da = []; //存放有多少税
