@@ -31,7 +31,7 @@ function setOption1(pad, to, to_r, str, col, url, da) {
                 text: '纳税总额\n' + to + '\n\n\n' + '综合税负\n' + to_r + '%', //使用“+”可以使每行文字居中
                 textAlign: 'center',
                 font: '15px Arial',
-                fill: '#000',
+                fill: 'rgb(100,100, 100)',
             }
         }, {
             type: 'text',
