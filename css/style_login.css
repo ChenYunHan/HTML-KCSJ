@@ -1,27 +1,3 @@
-body {
-    background-color: white;
-}
-
-a:link {
-    color: rgb(90, 174, 253);
-    text-decoration: none
-}
-
-a:visited {
-    color: rgb(90, 174, 253);
-    text-decoration: none
-}
-
-a:hover {
-    color: rgb(90, 174, 253);
-    text-decoration: none
-}
-
-a:active {
-    color: rgb(90, 174, 253);
-    text-decoration: none
-}
-
 /*左箭头*/
 .left-arrow {
     padding: 0px;

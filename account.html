@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>看账导航</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_account.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="./js/jquery-3.3.1.js"></script>
     <script src="./js/jquerysession.js"></script>
     <script>
@@ -43,7 +43,9 @@
                         <div class="media col-xs-12 i4_1 ii">
                             <div class="media-left">
                                 <img src="./img/ico_03.png" class="media-object img1" alt="利润情况">
-                                利润情况
+                                <p class="ppp">
+                                    利润情况
+                                </p>
                             </div>
                             <div id="dd1" class="media-body">
                             </div>
@@ -56,7 +58,9 @@
                         <div class="media col-xs-12 i4_1 ii">
                             <div class="media-left">
                                 <img src="./img/ico_07.png" class="media-object img1" alt="纳税情况">
-                                纳税情况
+                                <p class="ppp">
+                                    纳税情况
+                                </p>
                             </div>
                             <div id="dd2" class="media-body">
                             </div>
@@ -69,7 +73,9 @@
                         <div class="media col-xs-12 i4_1 ii">
                             <div class="media-left">
                                 <img src="./img/ico_63.png" class="media-object img1" alt="应收账款">
-                                应收账款
+                                <p class="ppp">
+                                    应收账款
+                                </p>
                             </div>
                             <div id="dd3" class="media-body">
                             </div>
@@ -80,6 +86,7 @@
             </ul>
         </div>
     </div>
+    <div style="height:54px"></div>
     <div class="main_nav_bottom">
         <nav class="navbar navbar-default navbar-fixed-bottom">
             <div class="container-fluid" style="background-color: white">
@@ -114,9 +121,11 @@
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/js_account.js"></script>
     <script>
-        // $('.all>li').click(function () {
-        //     $(this).find('ul').slideToggle()
-        // });
+        $(".img1").css("width", screen.availWidth * 0.13526)
+        $(".media-left").css("padding-right", screen.availWidth * 0.10628)
+        if (screen.availWidth * 0.13526 < 48) {
+            $(".ppp").css("width", "48px")
+        }
         $('.retrie dt a').click(function () {
             var $t = $(this);
             if ($t.hasClass('up')) {

@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>我的</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_mine.css">
+    <link rel="stylesheet" href="css/style.css">
 
 
 </head>
@@ -138,43 +138,48 @@
                 </li>
             </ul>
         </div>
-        <div class="main_nav_bottom">
-            <nav class="navbar navbar-default navbar-fixed-bottom">
-                <div class="container-fluid" style="background-color: white">
-                    <ul class="nav nav-tabs nav-tabs-justified">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4 col-xs-4" style="align-content: center">
-                                <li><a href="./index.html" onclick="newD()">
-                                        <img src="./img/u40.png" alt="首页">
-                                        <p class="p1">首页</p>
-                                    </a>
-                                </li>
+        <div style="height:54px"></div>
+        <footer class="navbar-fixed-top">
+            <div class="main_nav_bottom">
+                <nav class="navbar navbar-default navbar-fixed-bottom">
+                    <div class="container-fluid" style="background-color: white">
+                        <ul class="nav nav-tabs nav-tabs-justified">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-4" style="align-content: center">
+                                    <li><a href="./index.html" onclick="newD()">
+                                            <img src="./img/u40.png" alt="首页">
+                                            <p class="p1">首页</p>
+                                        </a>
+                                    </li>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" style="align-content: center">
+                                    <li><a href="./account.html">
+                                            <img src="./img/u36.png" alt="看账">
+                                            <p class="p1">看账</p>
+                                        </a>
+                                    </li>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" style="align-content: center">
+                                    <li><a href="#">
+                                            <img src="./img/u48.png" alt="我的">
+                                            <p class="p1">我的</p>
+                                        </a>
+                                    </li>
+                                </div>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-xs-4" style="align-content: center">
-                                <li><a href="./account.html">
-                                        <img src="./img/u36.png" alt="看账">
-                                        <p class="p1">看账</p>
-                                    </a>
-                                </li>
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-4" style="align-content: center">
-                                <li><a href="#">
-                                        <img src="./img/u48.png" alt="我的">
-                                        <p class="p1">我的</p>
-                                    </a>
-                                </li>
-                            </div>
-                        </div>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </footer>
     </div>
 
     <script src="./js/jquery-3.3.1.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/jquerysession.js"></script>
     <script>
+        if (screen.availWidth < 500)
+            $("#avatar").css("width", screen.availWidth * 0.23913)
         if ($.session.get("name") != null) {
             var url = $.session.get("name");
             if (url != null && url.length > 0) {
