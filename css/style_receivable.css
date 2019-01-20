@@ -73,3 +73,10 @@
 .col-xs-3 {
     text-align: right;
 }
+
+
+@media (max-width: 413px) {
+    #p2 {
+        font-size: 40px;
+    }
+}

@@ -72,3 +72,13 @@ a:active {
 .logo {
     padding: 0;
 }
+
+@media (max-width: 413px) {
+    body {
+        font-size: 12px;
+    }
+
+    #d1 {
+        font-size: 16px;
+    }
+}

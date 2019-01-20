@@ -68,22 +68,22 @@
                     <ul class="nav nav-tabs nav-tabs-justified">
                         <div class="row">
                             <div class="col-md-4 col-sm-4 col-xs-4" style="align-content: center">
-                                <li><a href="#" onclick="newD()">
-                                        <img src="./img/u30.png" alt="首页">
+                                <li><a href="#">
+                                        <img class="img3" src="./img/u30.png" alt="首页">
                                         <p class="p1">首页</p>
                                     </a>
                                 </li>
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-4">
                                 <li><a href="./account.html">
-                                        <img src="./img/u36.png" alt="看账">
+                                        <img class="img3" src="./img/u36.png" alt="看账">
                                         <p class="p1">看账</p>
                                     </a>
                                 </li>
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-4" style="align-content: center">
                                 <li><a href="./mine.html">
-                                        <img src="./img/u32.png" alt="我的">
+                                        <img class="img3" src="./img/u32.png" alt="我的">
                                         <p class="p1">我的</p>
                                     </a>
                                 </li>
@@ -97,8 +97,11 @@
     <script src="./js/jquery-3.3.1.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script>
-        $(".img1").css("width", screen.availWidth * 0.26811)
-        $(".img2").css("width", screen.availWidth * 0.82125)
+        if (screen.availWidth < 500) {
+            $(".img1").css("width", screen.availWidth * 0.26811)
+            $(".img2").css("width", screen.availWidth * 0.82125)
+            $(".img3").css("width", screen.availWidth * 0.0483)
+        }
     </script>
 </body>
 

@@ -1,0 +1,11 @@
+.p1 {
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
+}
+
+.nav-tabs {
+    text-align: center;
+    height: 27px;
+    line-height: 27px;
+}

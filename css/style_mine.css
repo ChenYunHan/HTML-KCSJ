@@ -101,6 +101,10 @@
     width: 80%;
 }
 
+.img1 {
+    width: 20px;
+}
+
 @media (max-width: 413px) {
     .new {
         font-size: 16px;
