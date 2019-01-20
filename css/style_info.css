@@ -14,7 +14,7 @@
     transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
     position: absolute;
     left: 5%;
-    top: 25px;
+    top: 22px;
 }
 
 /*右箭头*/
@@ -39,9 +39,8 @@
 }
 
 #d1 {
-    width: 100%;
-    height: 60px;
-    background-color: rgb(27, 131, 210)
+    background-color: rgb(27, 131, 210);
+    color: white;
 }
 
 #d2 {
@@ -51,13 +50,7 @@
     height: 120px;
 }
 
-.f1 {
-    text-align: center;
-    font-size: 18px;
-    color: white;
-}
-
-#img1 {
+#d2>img:nth-child(2) {
     display: inline-block;
     position: absolute;
     left: 54%;
@@ -65,7 +58,7 @@
     width: 13px;
 }
 
-#img2 {
+#d2>img:nth-child(3) {
     display: inline-block;
     position: absolute;
     left: 55%;
@@ -73,16 +66,12 @@
     width: 6px;
 }
 
-.i4_1 {
+.col-xs-12 {
     height: 55px;
     padding-left: 30px;
     margin: 0;
     padding-top: 18px;
     font-size: 16px;
-}
-
-.sp1 {
-    color: black;
 }
 
 .col-xs-3 {
@@ -92,6 +81,7 @@
 
 .col-xs-8 {
     text-align: right;
+    color: black;
 }
 
 input,
@@ -101,7 +91,7 @@ input:focus {
     /* outline: none; */
 }
 
-#dd1 {
+.container-fluid>div:last-child {
     position: absolute;
     left: 10%;
     top: 60%;

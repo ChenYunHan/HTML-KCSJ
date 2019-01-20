@@ -18,20 +18,11 @@
 }
 
 #d1 {
-    width: 100%;
-    height: 56px;
     background-color: rgb(27, 131, 210);
-    font-size: 18px;
-    color: black;
-    text-align: center;
+    color: white;
 }
 
-#sp1 {
-    margin-bottom: 0px;
-    color: white
-}
-
-#d2_1 {
+#d2>div:first-child {
     text-align: right;
     padding-top: 5px;
     padding-right: 8px;
@@ -39,11 +30,11 @@
     font-size: 13px;
 }
 
-#p1 {
+#d2>div:nth-child(2)>p:first-child {
     color: rgb(102, 102, 102);
 }
 
-#p2 {
+#d2>div:nth-child(2)>p:nth-child(2) {
     font-size: 45px;
     color: rgb(27, 130, 210);
 }

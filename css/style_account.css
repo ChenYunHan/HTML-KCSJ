@@ -19,8 +19,7 @@
     z-index: 3;
 }
 
-
-#d1 {
+.center-vertical {
     width: 100%;
     height: 40px;
     background-color: white;
@@ -29,38 +28,17 @@
     position: relative;
 }
 
-
-
-.b1 {
-    background-color: white;
-}
-
-.nav-tabs {
-    text-align: center;
-    height: 27px;
-    line-height: 27px;
-}
-
-.p1 {
-    margin: 0;
-    padding: 0;
-    line-height: 20px;
-}
-
-.ii {
-    background-color: white;
-    padding-bottom: 15px;
-}
-
-.i4_1 {
+.media {
     padding-left: 30px;
     padding-right: 0px;
     margin: 0;
     padding-top: 15px;
     background-color: white;
+    background-color: white;
+    padding-bottom: 15px;
 }
 
-.img1 {
+.media img {
     width: 100%;
     margin-bottom: 2px;
     margin-right: 0px;

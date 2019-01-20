@@ -7,52 +7,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>登录</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/headTitle.css">
     <link rel="stylesheet" href="css/style_login.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body style="background-color: white">
     <div class="container-fluid">
-        <div id="d1" class="center-vertical ">
-            <div class="f1 " style="width: 100%">
+        <footer class="navbar-fixed-top">
+            <div id="d1" class="center-vertical">
                 <a href="mine.html">
                     <div class="left-arrow"></div>
                 </a>登录
             </div>
-        </div>
+        </footer>
+        <div style="height:56px;"></div>
         <div class="ii1">
         </div>
         <form name="frm1" id="frm1" action="mine.html" method="POST" class="form-horizontal" role="form">
-            <div class="form-group login_3">
-                <label for="tel" class="col-lg-2 col-xs-2 control-label login_1">
+            <div class="form-group">
+                <label for="tel" class="col-lg-2 col-xs-2 control-label">
                     <img src="./img/u18.png" alt="登录电话" style="width: 30px">
                 </label>
-                <div id="fd1" class="col-lg-10 col-xs-10 login_2">
+                <div id="fd1" class="col-lg-10 col-xs-10">
                     <input type="text" name="name" id="name" class="form-control" value="" placeholder="手机号">
                     <img class="img1" src="./img/u60.png" alt="" style="display: none">
                     <img class="img2" src="./img/u16.png" alt="" style="display: none">
                 </div>
             </div>
 
-            <div class="form-group login_3">
-                <label for="tel" class="col-lg-2 col-xs-2 control-label login_1">
+            <div class="form-group">
+                <label for="tel" class="col-lg-2 col-xs-2 control-label">
                     <img src="./img/u22.png" alt="登录密码" style="width: 28px">
                 </label>
-                <div id="fd2" class="col-lg-10 col-xs-10 login_2">
+                <div id="fd2" class="col-lg-10 col-xs-10">
                     <input type="password" name="pwd" id="pwd" class="form-control" value="" placeholder="密码">
                     <img class="img1" src="./img/u60.png" alt="" style="display: none">
                     <img class="img2" src="./img/u16.png" alt="" style="display: none">
                 </div>
             </div>
-            <div id="d2" class="text-center" style="height: 340px">
+
+            <div class="text-center center-vertical" style="height: 340px">
                 <div>
                     <button id="d2_b1" type="button" class="btn btn-default btn-lg f1">登录</button>
                 </div>
                 <div>
-                    <button id="d2_b2" type="button" class="btn btn-default btn-lg f1">没有账号，立即注册</button>
+                    <button type="button" class="btn btn-default btn-lg f1">没有账号，立即注册</button>
                 </div>
                 <div>
-                    <p id="p1" for="protocol">登录注册即同意<a href="#">《用户协议》</a></p>
+                    <p for="protocol">登录注册即同意<a href="#">《用户协议》</a></p>
                 </div>
             </div>
         </form>

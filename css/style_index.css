@@ -54,33 +54,22 @@ a:active {
     color: black;
 }
 
-.i4_1 {
+ul>li:first-child .col-xs-12 {
     height: 55px;
     padding-left: 38px;
     margin: 0;
     padding-top: 18px;
 }
 
-.i4_2 {
+ul>li:nth-child(2) .col-xs-12,
+ul>li:nth-child(3) .col-xs-12 {
     height: 183px;
     padding-left: 38px;
     margin: 0;
     padding-top: 18px;
 }
 
-.p1 {
-    margin: 0;
-    padding: 0;
-    line-height: 20px;
-}
-
-.nav-tabs {
-    text-align: center;
-    height: 27px;
-    line-height: 27px;
-}
-
-.f1 {
+.col-xs-12>div:first-child p {
     text-align: left;
     font-size: 14.5px;
     color: rgb(56, 56, 56);

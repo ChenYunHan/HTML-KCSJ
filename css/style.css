@@ -13,6 +13,12 @@ body {
 .container-fluid {
     padding: 0;
     margin: 0;
+}
+
+.center-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
 }
 
@@ -24,12 +30,6 @@ body {
 .btn.active.focus {
     outline: none;
     -webkit-appearance: none;
-}
-
-.center-vertical {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .ii {
@@ -71,6 +71,17 @@ a:active {
 
 .logo {
     padding: 0;
+}
+
+#myModal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 80%;
+    overflow: visible;
+    /*属性规定当内容溢出元素框时发生的事情 visible:内容不会被修剪，会呈现在元素框之外*/
+    bottom: inherit;
+    right: inherit;
 }
 
 @media (max-width: 413px) {

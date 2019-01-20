@@ -35,28 +35,21 @@
     transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
     position: absolute;
     left: 5%;
-    top: 25px;
+    top: 22px;
 }
 
 #d1 {
-    width: 100%;
-    height: 60px;
-    background-color: rgb(27, 131, 210)
-}
-
-.f1 {
-    text-align: center;
-    font-size: 18px;
+    background-color: rgb(27, 131, 210);
     color: white;
 }
 
-.i4_1 {
+.media {
     height: 55px;
     padding-left: 38px;
     margin: 0;
     padding-top: 18px;
 }
 
-#a1 {
+ul>li>a {
     font-size: 15px;
 }
