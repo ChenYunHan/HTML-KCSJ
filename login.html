@@ -6,17 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>登录</title>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/jquerysession.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/headTitle.css">
     <link rel="stylesheet" href="css/style_login.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg); //search,查询？后面的参数，并匹配正则
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+        if (GetQueryString("error") == "1") {
+            var r = confirm("需要登录才能进行该操作");
+            if (!r)
+            window.location.href = './mine.html';
+        }
+    </script>
 </head>
 
 <body style="background-color: white">
     <div class="container-fluid">
         <footer class="navbar-fixed-top">
             <div id="d1" class="center-vertical">
-                <a href="mine.html">
+                <a href="./mine.html">
                     <div class="left-arrow"></div>
                 </a>登录
             </div>
@@ -35,7 +50,6 @@
                     <img class="img2" src="./img/u16.png" alt="" style="display: none">
                 </div>
             </div>
-
             <div class="form-group">
                 <label for="tel" class="col-lg-2 col-xs-2 control-label">
                     <img src="./img/u22.png" alt="登录密码" style="width: 28px">
@@ -46,27 +60,25 @@
                     <img class="img2" src="./img/u16.png" alt="" style="display: none">
                 </div>
             </div>
-
-            <div class="text-center center-vertical" style="height: 340px">
+            <div class="text-center center-vertical" style="height: 360px">
                 <div>
-                    <button id="d2_b1" type="button" class="btn btn-default btn-lg f1">登录</button>
+                    <button id="d2_b1" type="button" class="btn btn-default btn-lg">登录</button>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-default btn-lg f1">没有账号，立即注册</button>
+                    <button type="button" class="btn btn-default btn-lg">没有账号，立即注册</button>
                 </div>
                 <div>
                     <p for="protocol">登录注册即同意<a href="#">《用户协议》</a></p>
                 </div>
+                <div id="dd1" class="alert alert-danger center-block">电话号码格式有误！</div>
+                <div id="dd2" class="alert alert-danger center-block">密码格式有误！必须在6~16位之间。</div>
+                <div id="dd3" class="alert alert-danger center-block">登陆失败</div>
             </div>
+            <div id="dd5" class="alert alert-success center-block" style="width: 80%;display: none;text-align: center">登录成功！</div>
         </form>
-        <div id="dd1" class="alert alert-danger center-block" style="width: 80%;display: none">电话号码格式有误！</div>
-        <div id="dd2" class="alert alert-danger center-block" style="width: 80%;display: none">密码格式有误！必须在6~16位之间。</div>
-        <div id="dd3" class="alert alert-danger center-block" style="width: 80%;display: none">登陆失败</div>
-        <div id="dd4" class="alert alert-danger center-block" style="width: 80%;display: none">请登录后再进行该操作</div>
-        <div id="dd5" class="alert alert-success center-block" style="width: 80%;display: none">登录成功！</div>
+
     </div>
-    <script src="./js/jquery-3.3.1.js"></script>
-    <script src="./js/jquerysession.js"></script>
+
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/js_login.js"></script>
 </body>

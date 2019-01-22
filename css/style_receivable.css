@@ -66,8 +66,8 @@
 }
 
 
-@media (max-width: 413px) {
-    #p2 {
+@media (max-width: 376px) {
+    #d2>div:nth-child(2)>p:nth-child(2) {
         font-size: 40px;
     }
 }

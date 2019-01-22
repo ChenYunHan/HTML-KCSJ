@@ -53,7 +53,10 @@ function displayList() {
                     var income = res[i].income;
                     var cost = res[i].cost;
                     var profit = res[i].profit;
-                    ll.append('<li><div class="col-xs-12 i4_1"><div class="col-xs-2"><p class="p1">' + month + '</p><p class="p2">' + year + '</p></div><div class="col-xs-7"><p class="p3">收￥' + income + '</p><p class="p4">支￥' + cost + '</p></div><div class="col-xs-3"><p class="p2">利润</p><p class="p3">￥' + profit + '</p></div></div></li>')
+                    var color = "p3"
+                    if (profit < 0)
+                        color = "p4"
+                    ll.append('<li><div class="col-xs-12 i4_1"><div class="col-xs-2"><p class="p1">' + month + '</p><p class="p2">' + year + '</p></div><div class="col-xs-7"><p class="p3">收￥' + income + '</p><p class="p4">支￥' + cost + '</p></div><div class="col-xs-3"><p class="p2">利润</p><p class="' + color + '">￥' + profit + '</p></div></div></li>')
                 }
             }
         }

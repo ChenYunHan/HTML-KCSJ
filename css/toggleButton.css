@@ -1,0 +1,32 @@
+.wrap {
+    width: 55px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 16px;
+    position: absolute;
+    transition: 0.3s;
+    left: 78%;
+    font-size: 14px;
+    color: rgb(22, 22, 22);
+    line-height: 25px;
+}
+
+.circle {
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 0px;
+    transition: 0.3s;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, .5);
+}
+
+.wrap>span {
+    padding: 5px;
+}
+
+/* .circle:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, .5);
+} */

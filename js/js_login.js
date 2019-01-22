@@ -57,7 +57,7 @@ $("#d2_b1").click(function () {
                 if (data.errorCode == "1200") {
                     $.session.set("name", name);
                     $("#dd5").fadeIn();
-                    window.setTimeout("javascript:window.location.href = './mine.html'", 1500);
+                    window.setTimeout("javascript:window.location.href='./mine.html'", 1500);
                 }
             },
         });
@@ -66,15 +66,3 @@ $("#d2_b1").click(function () {
         $("#dd3").delay(1000).fadeOut();
     }
 });
-
-function GetQueryString(name) {
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-    var r = window.location.search.substr(1).match(reg); //search,查询？后面的参数，并匹配正则
-    if (r != null) return unescape(r[2]);
-    return null;
-}
-
-if (GetQueryString("error") == "1") {
-    $("#dd4").fadeIn();
-    $("#dd4").delay(1000).fadeOut();
-}

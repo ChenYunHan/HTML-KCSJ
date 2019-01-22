@@ -93,6 +93,11 @@ function setOption1(pad, to, to_r, str, col, url, da) {
     myChart1.setOption(option);
 }
 
+function noData() {
+    $("#box").html("暂无数据");
+    $("#box").addClass("center-vertical");
+}
+
 function drawing() {
     if (myChart1 != null && myChart1 != "" && myChart1 != undefined) {
         myChart1.dispose();
@@ -119,6 +124,7 @@ function drawing() {
                 var res = data.result;
                 var to = res.totaltax;
                 var to_r = res.totaltax_rate;
+
                 var jj = {
                     "thevattax": "增值税",
                     "incometax": "所得税",
@@ -161,11 +167,15 @@ function drawing() {
                     col = "red"
                 }
                 if (5 <= len && len <= 7) {
-                    pad = 35;
+                    pad = 30;
                 } else if (8 <= len && len <= 10) {
-                    pad = 15;
+                    pad = 10;
                 }
-                setOption1(pad, to, to_r, str, col, url, da);
+                if (to != 0)
+                    setOption1(pad, to, to_r, str, col, url, da)
+                else {
+                    noData();
+                };
                 // var year = res.date_year;
                 // var tht = res.thevattax;
                 // var tht_a = res.thevattax_rate;

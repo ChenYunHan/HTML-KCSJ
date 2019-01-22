@@ -69,14 +69,29 @@ ul>li:nth-child(3) .col-xs-12 {
     padding-top: 18px;
 }
 
-.col-xs-12>div:first-child p {
+.col-xs-12>div>p {
+    color: black;
+}
+
+.col-xs-12>.col-xs-4 {
+    padding-left: 0px;
+}
+
+.col-xs-4>p {
     text-align: left;
     font-size: 14.5px;
     color: rgb(56, 56, 56);
     padding-left: 0px;
+    min-width: 72.5;
 }
 
 .col-xs-7 {
     text-align: right;
     /* position: relative; */
+}
+
+@media (max-width: 376px) {
+    .col-xs-4>p {
+        font-size: 12.5px;
+    }
 }

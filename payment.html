@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,6 +8,7 @@
     <title>纳税情况</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/headTitle.css">
+    <link rel="stylesheet" href="css/toggleButton.css">
     <link rel="stylesheet" href="css/style_payment.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="./js/jquery-3.3.1.js"></script>
@@ -28,8 +29,15 @@
                     <div class="left-arrow return"></div>
                 </a>
                 <span class="d1_1">纳税情况</span>
-                <img id="img1" src="./img/u104.png" alt="月份" style="display:none">
-                <img id="img2" src="./img/u103.png" alt="季度">
+                <!-- <img id="img1" src="./img/u104.png" alt="月份" style="display:none"> -->
+                <!-- <img id="img2" src="./img/u103.png" alt="季度"> -->
+                <div class="wrap">
+                    <div class="circle">
+
+                    </div>
+                    <span>月</span>
+                    <span>季</span>
+                </div>
             </div>
         </footer>
         <div style="height:56px;"></div>
@@ -117,17 +125,32 @@
             }
         }
         displayArrow();
+        $('.wrap').click(function () {
+            var left = $(".circle").css('left');
+            left = parseInt(left);
+            if (left == 0) {
+                $("#u1").fadeOut();
+                $("#u2").fadeIn();
+                $(".circle").css('left', '30px');
+                $(".circle").css('background-color', '#fff');
+                $(this).css('background-color', '#ccc');
+            } else {
+                $("#u1").fadeIn();
+                $("#u2").fadeOut();
+                $(".circle").css('left', '0px');
+                $(".circle").css('background-color', '#fff');
+                $(this).css('background-color', '#ccc');
+            }
+        })
         $("#img1").click(function () {
             $("#img1").fadeOut();
             $("#img2").fadeIn();
-            $("#u1").fadeIn();
-            $("#u2").fadeOut();
+
         })
         $("#img2").click(function () {
             $("#img1").fadeIn();
             $("#img2").fadeOut();
-            $("#u1").fadeOut();
-            $("#u2").fadeIn();
+
         })
         $("#riA").click(function () {
             if (year < max)

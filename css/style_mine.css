@@ -95,7 +95,7 @@
     width: 20px;
 }
 
-@media (max-width: 413px) {
+@media (max-width: 376px) {
     .new {
         font-size: 16px;
     }

@@ -63,6 +63,9 @@ input {
     border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);
 }
 
+#frm1>div:nth-child(3) {
+    position: relative;
+}
 
 #frm1>div:nth-child(3)>div:nth-child(1)>button {
     font-size: 16.5px;
@@ -93,6 +96,12 @@ input {
     color: rgb(10, 120, 222);
 }
 
-.center-block {
-    text-align: center;
+#dd1,
+#dd2,
+#dd3 {
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    display: none;
+    position: absolute;
 }

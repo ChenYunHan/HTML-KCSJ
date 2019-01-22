@@ -48,6 +48,7 @@
 #d1 {
     background-color: rgb(27, 131, 210);
     color: white;
+    position: relative;
 }
 
 #d2 {

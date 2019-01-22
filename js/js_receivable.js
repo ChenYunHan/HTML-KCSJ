@@ -15,10 +15,10 @@ $.ajax({
         if (month.substr(0, 1) === "0") {
             month = month.substr(1);
         }
-        $("#p1").text("");
-        $("#p2").text("");
-        $("#p1").text(year + "年" + month + "月期末余额");
-        $("#p2").text(pf.receivable);
+        $("#d2>div:nth-child(2)>p:first-child").text("");
+        $("#d2>div:nth-child(2)>p:nth-child(2)").text("");
+        $("#d2>div:nth-child(2)>p:first-child").text(year + "年" + month + "月期末余额");
+        $("#d2>div:nth-child(2)>p:nth-child(2)").text(pf.receivable);
     }
 });
 

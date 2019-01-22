@@ -41,7 +41,7 @@
     font-size: 16px;
 }
 
-@media (max-width: 413px) {
+@media (max-width: 376px) {
     .p1 {
         font-size: 14px;
     }
