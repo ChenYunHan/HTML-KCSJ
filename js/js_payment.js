@@ -124,7 +124,6 @@ function drawing() {
                 var res = data.result;
                 var to = res.totaltax;
                 var to_r = res.totaltax_rate;
-
                 var jj = {
                     "thevattax": "增值税",
                     "incometax": "所得税",
