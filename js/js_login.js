@@ -50,7 +50,7 @@ $("#d2_b1").click(function () {
     if (boolean1 && boolean2) {
         var name = $("#name").val();
         $.ajax({
-            url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/loginByPwd",
+            url: getJsonUrl("loginByPwd"),
             type: "POST",
             dataType: 'json',
             success: function (data) {
@@ -58,8 +58,13 @@ $("#d2_b1").click(function () {
                     $.session.set("name", name);
                     $("#dd5").fadeIn();
                     window.setTimeout("javascript:window.location.href='./mine.html'", 1500);
+                } else {
+                    alert("出现未知错误,请求失败请稍后重试。");
                 }
             },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("出现未知错误。\r\n" + XMLHttpRequest.status + "：" + textStatus)
+            }
         });
     } else {
         $("#dd3").fadeIn();

@@ -13,6 +13,34 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="./js/jquery-3.3.1.js"></script>
     <script src="./js/jquerysession.js"></script>
+    <script id="listTmpl" type="text/x-dot-template">
+        <li>
+            <div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);">
+                <div class="col-xs-4">
+                    <p class="p1">{{=it.month}}</p>
+                    <p class="p3">{{=it.quarOrMon}} </p>
+                </div>
+                <div class="col-xs-4 c0">
+                    <p class="p2">纳税总额</p>
+                    <p class="p2">{{=it.to}}</p>
+                </div>
+                <div class="col-xs-4 c0">
+                    <p class="p2">综合纳税率</p>
+                    <p class="p2">{{=it.to_r}}</p>
+                    <img class="img1" src="./img/{{=it.url}}.png"></img>
+                </div>
+            </div>
+        </li>
+            <li>
+                <div class="col-xs-12 i4_1">
+                    <div id="{{=it.directionId}}_{{=it.i}}_1" class="col-xs-4 c1 "></div>
+                    <div id="{{=it.directionId}}_{{=it.i}}_2" class="col-xs-4 c2"></div>
+                    <div id="{{=it.directionId}}_{{=it.i}}_3" class="col-xs-4 c3"></div>
+                </div>
+            </li>
+            <div class="col-xs-12 ii2">
+            </div>
+    </script>
     <script>
         if ($.session.get("name") == null) {
             window.location.href = "./login.html?error=1";
@@ -100,8 +128,18 @@
 
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/echarts.js"></script>
+    <script src="./js/doT.js"></script>
     <script src="./js/getJson.js"></script>
-    <script src="./js/js_payment.1.js"></script>
+    <script src="./js/js_payment.js"></script>
+    <!-- <script>
+        var dataInter = {
+            "month": "11",
+            "quarOrMon": "月份",
+            "to": "123456",
+        };
+        var interText = doT.template($("#listTmpl").text());
+        $("#u1").append(interText(dataInter));
+    </script> -->
     <script>
         var myDate = new Date();
         fullYear = myDate.getFullYear();

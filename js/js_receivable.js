@@ -1,7 +1,7 @@
 var cno = $.session.get("cno");
 $.ajax({
     type: "post",
-    url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/financialOverview",
+    url: getJsonUrl("financialOverview"),
     data: {
         "Param": {
             "company_no": cno,
@@ -9,16 +9,23 @@ $.ajax({
     },
     dataType: "json",
     success: function (data) {
-        pf = data.result.receivable;
-        year = pf.period.substr(0, 4);
-        month = pf.period.substr(4, 5);
-        if (month.substr(0, 1) === "0") {
-            month = month.substr(1);
+        if (data.errorCode == "1200") {
+            pf = data.result.receivable;
+            year = pf.period.substr(0, 4);
+            month = pf.period.substr(4, 5);
+            if (month.substr(0, 1) === "0") {
+                month = month.substr(1);
+            }
+            $("#d2>div:nth-child(2)>p:first-child").text("");
+            $("#d2>div:nth-child(2)>p:nth-child(2)").text("");
+            $("#d2>div:nth-child(2)>p:first-child").text(year + "年" + month + "月期末余额");
+            $("#d2>div:nth-child(2)>p:nth-child(2)").text(pf.receivable);
+        } else {
+            alert("出现未知错误,请求失败请稍后重试。");
         }
-        $("#d2>div:nth-child(2)>p:first-child").text("");
-        $("#d2>div:nth-child(2)>p:nth-child(2)").text("");
-        $("#d2>div:nth-child(2)>p:first-child").text(year + "年" + month + "月期末余额");
-        $("#d2>div:nth-child(2)>p:nth-child(2)").text(pf.receivable);
+    },
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
+        alert("出现未知错误。\r\n" + XMLHttpRequest.status + "：" + textStatus)
     }
 });
 
@@ -30,7 +37,7 @@ var uu = $("#u1");
 var year = $.session.get("year3");
 $.ajax({
     type: "post",
-    url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/getReceivables",
+    url: getJsonUrl("getReceivables"),
     data: {
         "Param": {
             "company_no": cno,
@@ -60,6 +67,11 @@ $.ajax({
                 str = '<div><div class="col-xs-12 i4_1"><p class="col-xs-9 pp1">' + json[i].dw + '</p><p class="col-xs-3 pp1">' + json[i].jy + '</p></div></li>';
                 uu.append(str);
             }
+        } else {
+            alert("出现未知错误,请求失败请稍后重试。");
         }
+    },
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
+        alert("出现未知错误。\r\n" + XMLHttpRequest.status + "：" + textStatus)
     }
 });

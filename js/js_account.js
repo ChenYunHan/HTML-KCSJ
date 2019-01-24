@@ -1,7 +1,7 @@
 // 获取所有的企业信息
 var la = $("#u1")
 $.ajax({
-    url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/getunits",
+    url: getJsonUrl("getunits"),
     type: "POST",
     dataType: 'json',
     success: function (data) {
@@ -22,14 +22,19 @@ $.ajax({
             }
             $("#u1").val($.session.get("cno"));
             aj1($.session.get("cno"));
+        } else {
+            alert("出现未知错误,请求失败请稍后重试。");
         }
     },
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
+        alert("出现未知错误。\r\n" + XMLHttpRequest.status + "：" + textStatus)
+    }
 });
 
 //设置页面的详细数据
 function aj1(data) {
     $.ajax({
-        url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/financialOverview",
+        url: getJsonUrl("financialOverview"),
         type: "POST",
         data: {
             "Param": {
@@ -66,16 +71,15 @@ function aj1(data) {
                 }
                 $("#dd3").html("");
                 $("#dd3").append('<div class="col-xs-5">' + month + '月余额</div><div class="col-xs-5">' + pf.receivable + '</div>')
+            } else {
+                alert("出现未知错误,请求失败请稍后重试。");
             }
         },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert("出现未知错误。\r\n" + XMLHttpRequest.status + "：" + textStatus)
+        }
     });
 }
-
-// $("#u1").change(function (e) {
-//     var id = $("#u1").val();
-//     $.session.set("cno", id);
-//     aj1(id);
-// });
 
 $("#u1").on("click", "li", function () {
     var id = $(this).attr("value");

@@ -1,0 +1,13 @@
+{
+    "url": {
+        "loginByPwd": "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/loginByPwd",
+        "getunits": "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/getunits",
+        "financialOverview": "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/financialOverview",
+        "profitOverview": "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/profitOverview",
+        "profitDetail": "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/profitDetail",
+        "yearlyTaxOverview": "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/yearlyTaxOverview",
+        "quarterlyTaxDetail": "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/quarterlyTaxDetail",
+        "monthlyTaxDetail": "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/monthlyTaxDetail",
+        "getReceivables": "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/getReceivables"
+    }
+}

@@ -6,7 +6,7 @@ function displayData() {
     var year = year.substr(0, year.length - 1);
     $.ajax({
         type: "post",
-        url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/profitOverview",
+        url: getJsonUrl("profitOverview"),
         data: {
             "Param": {
                 "company_no": id,
@@ -23,7 +23,12 @@ function displayData() {
                 $("#sp1").html(inc);
                 $("#sp2").html(cost);
                 $("#sp3").html(pro);
+            } else {
+                alert("出现未知错误,请求失败请稍后重试。");
             }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert("出现未知错误。\r\n" + XMLHttpRequest.status + "：" + textStatus)
         }
     });
 }
@@ -35,7 +40,7 @@ function displayList() {
     var ll = $("#u1").html("");
     $.ajax({
         type: "POST",
-        url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/profitDetail",
+        url: getJsonUrl("profitDetail"),
         data: {
             "Param": {
                 "company_no": id,
@@ -58,7 +63,12 @@ function displayList() {
                         color = "p4"
                     ll.append('<li><div class="col-xs-12 i4_1"><div class="col-xs-2"><p class="p1">' + month + '</p><p class="p2">' + year + '</p></div><div class="col-xs-7"><p class="p3">收￥' + income + '</p><p class="p4">支￥' + cost + '</p></div><div class="col-xs-3"><p class="p2">利润</p><p class="' + color + '">￥' + profit + '</p></div></div></li>')
                 }
+            } else {
+                alert("出现未知错误,请求失败请稍后重试。");
             }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert("出现未知错误。\r\n" + XMLHttpRequest.status + "：" + textStatus)
         }
     })
 }
@@ -87,7 +97,7 @@ function drawing(ty) {
     }
     $.ajax({
         type: "POST",
-        url: "https://www.easy-mock.com/mock/5c345ed47db0f179db2028af/api/OpenAPIService/profitDetail",
+        url: getJsonUrl("profitDetail"),
         data: {
             "Param": {
                 "company_no": id,
@@ -209,7 +219,12 @@ function drawing(ty) {
                 };
                 myChart.hideLoading();
                 myChart.setOption(option);
+            } else {
+                alert("出现未知错误,请求失败请稍后重试。");
             }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert("出现未知错误。\r\n" + XMLHttpRequest.status + "：" + textStatus)
         }
     });
 }
