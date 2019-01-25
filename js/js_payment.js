@@ -139,18 +139,18 @@ function drawing() {
                     "othertax": "其他税"
                 };
                 var len = 0;
-                for (let s in res) {
-                    if (jj.hasOwnProperty(s)) {
+                for (let s in jj) {
+                    var value = res[s];
+                    if (value != 0) {
                         var name = jj[s];
-                        var value = res[s];
+                        var name_r = s + "_rate";
+                        var value1 = res[name_r];
                         var json = {
+                            "name": name,
                             "value": value,
-                            "name": name + "￥" + value
+                            "value1": value1
                         };
-                        if (value != 0) {
-                            len++
-                            da.push(json);
-                        }
+                        da.push(json);
                     }
                 }
                 var url = 'u108'
@@ -265,19 +265,18 @@ function quarterAndMonthly(url, id, year, fr, quarOrMon) {
                         "stamptax": "印花税",
                         "othertax": "其他税"
                     }
-                    for (let s in res[i]) {
-                        if (jj.hasOwnProperty(s)) {
+                    for (let s in jj) {
+                        var value = res[i][s];
+                        if (value != 0) {
                             var name = jj[s];
                             var name_r = s + "_rate";
-                            var value = res[i][s];
                             var value1 = res[i][name_r];
                             var json = {
                                 "name": name,
                                 "value": value,
                                 "value1": value1
                             };
-                            if (value != 0)
-                                da.push(json);
+                            da.push(json);
                         }
                     }
                     var url = "u108";
@@ -286,8 +285,6 @@ function quarterAndMonthly(url, id, year, fr, quarOrMon) {
                     else if (to_r > 8)
                         url = "u106"
                     if (to != 0) {
-                        // var str = '<li><div class="col-xs-12 i4_1" style="border-bottom: 0.3px solid rgba(0, 0, 0, 0.253);"><div class="col-xs-4"><p class="p1">' + month + '</p><p class="p3">' + quarOrMon + '</p></div><div class="col-xs-4 c0"><p class="p2">纳税总额</p><p class="p2">' + to + '</p></div><div class="col-xs-4 c0"><p class="p2">综合纳税率</p><p class="p2">' + to_r + '</p><img class="img1" src="./img/' + url + '.png"></div></div></li><li><div class="col-xs-12 i4_1"><div id="' + directionId + '_' + i + '_1" class="col-xs-4 c1 "> </div><div id="' + directionId + '_' + i + '_2" class="col-xs-4 c2"></div><div id="' + directionId + '_' + i + '_3" class="col-xs-4 c3"></div></div></li><div class="col-xs-12 ii2"></div>'
-                        // fr.append(str);
                         var dataInter = {
                             "month": month,
                             "quarOrMon": quarOrMon,
@@ -297,7 +294,7 @@ function quarterAndMonthly(url, id, year, fr, quarOrMon) {
                             "directionId": directionId,
                             "i": i,
                         };
-                        var interText = doT.template($("#listTmpl").text());
+                        var interText = doT.template($("#listTmplHead").text());
                         $("#" + directionId).append(interText(dataInter));
                         for (let j = 0; j < da.length; j++) {
                             $("#" + directionId + "_" + i + "_1").append('<p>' + da[j].name + '</p>');
