@@ -110,7 +110,7 @@ function drawing() {
     var pad = 0;
     $.ajax({
         type: "post",
-        url: getJsonUrl("yearlyTaxOverview"),
+        url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/yearlyTaxOverview",
         data: {
             "Param": {
                 "company_no": id,
@@ -216,8 +216,8 @@ function showList() {
     id = $.session.get("cno");
     year = $("#year").text();
     year = year.substr(0, year.length - 1);
-    var quarterUrl = getJsonUrl("quarterlyTaxDetail");
-    var monthlyUrl = getJsonUrl("monthlyTaxDetail");
+    var quarterUrl = "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/quarterlyTaxDetail";
+    var monthlyUrl = "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/monthlyTaxDetail";
     quarterAndMonthly(quarterUrl, id, year, fr, "季度"); //不同的fr代表了不同的div
     quarterAndMonthly(monthlyUrl, id, year, fr1, "月份");
 }

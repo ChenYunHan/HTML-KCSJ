@@ -6,7 +6,7 @@ function displayData() {
     var year = year.substr(0, year.length - 1);
     $.ajax({
         type: "post",
-        url: getJsonUrl("profitOverview"),
+        url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/profitOverview",
         data: {
             "Param": {
                 "company_no": id,
@@ -40,7 +40,7 @@ function displayList() {
     var ll = $("#u1").html("");
     $.ajax({
         type: "POST",
-        url: getJsonUrl("profitDetail"),
+        url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/profitDetail",
         data: {
             "Param": {
                 "company_no": id,
@@ -97,7 +97,7 @@ function drawing(ty) {
     }
     $.ajax({
         type: "POST",
-        url: getJsonUrl("profitDetail"),
+        url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/profitDetail",
         data: {
             "Param": {
                 "company_no": id,

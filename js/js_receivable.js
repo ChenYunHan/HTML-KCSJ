@@ -1,7 +1,7 @@
 var cno = $.session.get("cno");
 $.ajax({
     type: "post",
-    url: getJsonUrl("financialOverview"),
+    url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/financialOverview",
     data: {
         "Param": {
             "company_no": cno,
@@ -37,7 +37,7 @@ var uu = $("#u1");
 var year = $.session.get("year3");
 $.ajax({
     type: "post",
-    url: getJsonUrl("getReceivables"),
+    url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/api/OpenAPIService/getReceivables",
     data: {
         "Param": {
             "company_no": cno,

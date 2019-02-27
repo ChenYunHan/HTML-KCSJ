@@ -1,7 +1,7 @@
 // 获取所有的企业信息
 var la = $("#u1")
 $.ajax({
-    url: getJsonUrl("getunits"),
+    url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/getunits",
     type: "POST",
     dataType: 'json',
     success: function (data) {
@@ -34,7 +34,7 @@ $.ajax({
 //设置页面的详细数据
 function aj1(data) {
     $.ajax({
-        url: getJsonUrl("financialOverview"),
+        url: "http://192.168.9.196:7300/mock/5c1c376e48ca380e48e47bae/financialOverview",
         type: "POST",
         data: {
             "Param": {
